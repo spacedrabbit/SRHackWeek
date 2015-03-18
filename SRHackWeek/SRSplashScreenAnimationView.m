@@ -180,7 +180,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 		[self.layer addAnimation:representativeAnimation forKey:@"ShowSplashMenu"];
 		[self.completionBlocksByAnimation setObject:completionBlock forKey:[self.layer animationForKey:@"ShowSplashMenu"]];
 	}
-
+    /*
 	CAKeyframeAnimation *topButtonTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	topButtonTranslationXAnimation.duration = 1.325;
 	topButtonTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000), @(0.000)];
@@ -190,7 +190,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	topButtonTranslationXAnimation.fillMode = fillMode;
 	topButtonTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kTopMenuButtonName] layer] addAnimation:topButtonTranslationXAnimation forKey:@"showSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *topButtonTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	topButtonTranslationYAnimation.duration = 1.325;
 	topButtonTranslationYAnimation.values = @[@(0.000), @(463.000), @(443.000), @(443.000)];
@@ -200,7 +200,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	topButtonTranslationYAnimation.fillMode = fillMode;
 	topButtonTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kTopMenuButtonName] layer] addAnimation:topButtonTranslationYAnimation forKey:@"showSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *bottomButtonTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	bottomButtonTranslationXAnimation.duration = 1.325;
 	bottomButtonTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000), @(0.000)];
@@ -210,7 +210,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	bottomButtonTranslationXAnimation.fillMode = fillMode;
 	bottomButtonTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kBottomMenuButtonName] layer] addAnimation:bottomButtonTranslationXAnimation forKey:@"showSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *bottomButtonTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	bottomButtonTranslationYAnimation.duration = 1.325;
 	bottomButtonTranslationYAnimation.values = @[@(0.000), @(463.000), @(443.000), @(443.000)];
@@ -220,7 +220,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	bottomButtonTranslationYAnimation.fillMode = fillMode;
 	bottomButtonTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kBottomMenuButtonName] layer] addAnimation:bottomButtonTranslationYAnimation forKey:@"showSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *logoViewTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	logoViewTranslationXAnimation.duration = 1.325;
 	logoViewTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
@@ -230,17 +230,17 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	logoViewTranslationXAnimation.fillMode = fillMode;
 	logoViewTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kLogoImageViewName] layer] addAnimation:logoViewTranslationXAnimation forKey:@"showSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *logoViewTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	logoViewTranslationYAnimation.duration = 1.325;
-	logoViewTranslationYAnimation.values = @[@(0.000), @(457.000), @(437.000)];
+	logoViewTranslationYAnimation.values = @[@(0.000), @(457.000), @(443.000)];
 	logoViewTranslationYAnimation.keyTimes = @[@(0.000), @(0.698), @(1.000)];
 	logoViewTranslationYAnimation.timingFunctions = @[linearTiming, overshootTiming];
 	logoViewTranslationYAnimation.beginTime = beginTime;
 	logoViewTranslationYAnimation.fillMode = fillMode;
 	logoViewTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kLogoImageViewName] layer] addAnimation:logoViewTranslationYAnimation forKey:@"showSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *menuBackgroundTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	menuBackgroundTranslationXAnimation.duration = 1.325;
 	menuBackgroundTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000), @(0.000)];
@@ -250,27 +250,27 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	menuBackgroundTranslationXAnimation.fillMode = fillMode;
 	menuBackgroundTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kMenuBackgroundName] layer] addAnimation:menuBackgroundTranslationXAnimation forKey:@"showSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *menuBackgroundTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	menuBackgroundTranslationYAnimation.duration = 1.325;
-	menuBackgroundTranslationYAnimation.values = @[@(0.000), @(447.000), @(437.000), @(437.000)];
+	menuBackgroundTranslationYAnimation.values = @[@(0.000), @(447.000), @(443.000), @(443.000)];
 	menuBackgroundTranslationYAnimation.keyTimes = @[@(0.000), @(0.566), @(0.849), @(1.000)];
 	menuBackgroundTranslationYAnimation.timingFunctions = @[easeInTiming, overshootTiming, linearTiming];
 	menuBackgroundTranslationYAnimation.beginTime = beginTime;
 	menuBackgroundTranslationYAnimation.fillMode = fillMode;
 	menuBackgroundTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kMenuBackgroundName] layer] addAnimation:menuBackgroundTranslationYAnimation forKey:@"showSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *splashMenuTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	splashMenuTranslationXAnimation.duration = 1.325;
-	splashMenuTranslationXAnimation.values = @[@(0.742), @(0.742)];
+	splashMenuTranslationXAnimation.values = @[@(0.0), @(0.0)];
 	splashMenuTranslationXAnimation.keyTimes = @[@(0.000), @(1.000)];
 	splashMenuTranslationXAnimation.timingFunctions = @[linearTiming];
 	splashMenuTranslationXAnimation.beginTime = beginTime;
 	splashMenuTranslationXAnimation.fillMode = fillMode;
 	splashMenuTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[@"splashMenu"] layer] addAnimation:splashMenuTranslationXAnimation forKey:@"showSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *splashMenuTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	splashMenuTranslationYAnimation.duration = 1.325;
 	splashMenuTranslationYAnimation.values = @[@(-439.000), @(-439.000)];
@@ -335,7 +335,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 		[self.layer addAnimation:representativeAnimation forKey:@"DismissSplashMenu"];
 		[self.completionBlocksByAnimation setObject:completionBlock forKey:[self.layer animationForKey:@"DismissSplashMenu"]];
 	}
-
+    /*
 	CAKeyframeAnimation *topButtonTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	topButtonTranslationXAnimation.duration = 1.125;
 	topButtonTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
@@ -345,7 +345,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	topButtonTranslationXAnimation.fillMode = fillMode;
 	topButtonTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kTopMenuButtonName] layer] addAnimation:topButtonTranslationXAnimation forKey:@"dismissSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *topButtonTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	topButtonTranslationYAnimation.duration = 1.125;
 	topButtonTranslationYAnimation.values = @[@(0.000), @(463.000), @(463.000)];
@@ -355,7 +355,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	topButtonTranslationYAnimation.fillMode = fillMode;
 	topButtonTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kTopMenuButtonName] layer] addAnimation:topButtonTranslationYAnimation forKey:@"dismissSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *bottomButtonTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	bottomButtonTranslationXAnimation.duration = 1.125;
 	bottomButtonTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
@@ -365,7 +365,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	bottomButtonTranslationXAnimation.fillMode = fillMode;
 	bottomButtonTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kBottomMenuButtonName] layer] addAnimation:bottomButtonTranslationXAnimation forKey:@"dismissSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *bottomButtonTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	bottomButtonTranslationYAnimation.duration = 1.125;
 	bottomButtonTranslationYAnimation.values = @[@(0.000), @(463.000), @(463.000)];
@@ -405,7 +405,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	logoViewScaleYAnimation.fillMode = fillMode;
 	logoViewScaleYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kLogoImageViewName] layer] addAnimation:logoViewScaleYAnimation forKey:@"dismissSplashMenu_ScaleY"];
-
+    /*
 	CAKeyframeAnimation *logoViewTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	logoViewTranslationXAnimation.duration = 1.125;
 	logoViewTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
@@ -415,7 +415,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	logoViewTranslationXAnimation.fillMode = fillMode;
 	logoViewTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kLogoImageViewName] layer] addAnimation:logoViewTranslationXAnimation forKey:@"dismissSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *logoViewTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	logoViewTranslationYAnimation.duration = 1.125;
 	logoViewTranslationYAnimation.values = @[@(0.000), @(87.805), @(87.805)];
@@ -425,7 +425,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	logoViewTranslationYAnimation.fillMode = fillMode;
 	logoViewTranslationYAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kLogoImageViewName] layer] addAnimation:logoViewTranslationYAnimation forKey:@"dismissSplashMenu_TranslationY"];
-
+    /*
 	CAKeyframeAnimation *menuBackgroundTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
 	menuBackgroundTranslationXAnimation.duration = 1.125;
 	menuBackgroundTranslationXAnimation.values = @[@(0.000), @(0.000)];
@@ -435,7 +435,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 	menuBackgroundTranslationXAnimation.fillMode = fillMode;
 	menuBackgroundTranslationXAnimation.removedOnCompletion = removedOnCompletion;
 	[[self.viewsByName[kMenuBackgroundName] layer] addAnimation:menuBackgroundTranslationXAnimation forKey:@"dismissSplashMenu_TranslationX"];
-
+     */
 	CAKeyframeAnimation *menuBackgroundTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	menuBackgroundTranslationYAnimation.duration = 1.125;
 	menuBackgroundTranslationYAnimation.values = @[@(0.000), @(463.000), @(463.000)];
