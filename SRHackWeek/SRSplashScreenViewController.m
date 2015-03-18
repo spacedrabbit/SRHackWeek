@@ -46,7 +46,7 @@ static CGFloat kIconSize = 44.0;
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
+    [self.menuAnimationView removeAllAnimations];
     [self showMenuView:nil];
 }
 
