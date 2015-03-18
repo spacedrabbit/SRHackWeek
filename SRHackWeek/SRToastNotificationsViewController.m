@@ -23,6 +23,10 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
     [super viewDidLoad];
     UINavigationItem * navBarItem = self.navigationController.navigationItem;
     //[navBarItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(dismissAnimated:)]];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
     UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(dismissAnimated:)];
     [navBarItem setLeftBarButtonItem:buttonItem];
     
@@ -48,6 +52,11 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
     return 0;
 }
 
+-(void) returnToMenu{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 -(BOOL)prefersStatusBarHidden{ return YES; }
 
