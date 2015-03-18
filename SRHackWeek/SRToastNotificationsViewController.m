@@ -21,15 +21,9 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UINavigationItem * navBarItem = self.navigationController.navigationItem;
-    //[navBarItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(dismissAnimated:)]];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
     self.navigationItem.leftBarButtonItem = backButton;
-    
-    UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(dismissAnimated:)];
-    [navBarItem setLeftBarButtonItem:buttonItem];
-    
     [[UINavigationBar appearance] setBarTintColor:[SRNYTimesStyle gray246]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:24.0] }];
     self.navigationController.navigationBar.topItem.title = @"Toasty";
