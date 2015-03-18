@@ -21,6 +21,7 @@
 		25AAE3001AB8C73C00E8D3C1 /* sliderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25AAE2FE1AB8C73C00E8D3C1 /* sliderIcon@2x.png */; };
 		25AAE3011AB8C73C00E8D3C1 /* toastIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25AAE2FF1AB8C73C00E8D3C1 /* toastIcon@2x.png */; };
 		25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */; };
+		25AAE3071AB9DA5200E8D3C1 /* launchImageHack.png in Resources */ = {isa = PBXBuildFile; fileRef = 25AAE3061AB9DA5200E8D3C1 /* launchImageHack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		25AAE2FF1AB8C73C00E8D3C1 /* toastIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toastIcon@2x.png"; sourceTree = "<group>"; };
 		25AAE3031AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSplashScreenAnimationView.h; sourceTree = "<group>"; };
 		25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSplashScreenAnimationView.m; sourceTree = "<group>"; };
+		25AAE3061AB9DA5200E8D3C1 /* launchImageHack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImageHack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		259852381AB8819100F79824 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				25AAE3061AB9DA5200E8D3C1 /* launchImageHack.png */,
 				259852341AB8818800F79824 /* Cat-on-computer.jpg */,
 				259852351AB8818800F79824 /* NYTLogo.png */,
 			);
@@ -262,6 +265,7 @@
 				259852361AB8818800F79824 /* Cat-on-computer.jpg in Resources */,
 				259852171AB87DC500F79824 /* Main.storyboard in Resources */,
 				259852371AB8818800F79824 /* NYTLogo.png in Resources */,
+				25AAE3071AB9DA5200E8D3C1 /* launchImageHack.png in Resources */,
 				2598521C1AB87DC500F79824 /* LaunchScreen.xib in Resources */,
 				25AAE3011AB8C73C00E8D3C1 /* toastIcon@2x.png in Resources */,
 				25AAE3001AB8C73C00E8D3C1 /* sliderIcon@2x.png in Resources */,
