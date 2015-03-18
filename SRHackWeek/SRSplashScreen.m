@@ -37,13 +37,13 @@ static CGFloat kIconSize = 44.0;
     [super viewDidLoad];
 
     self.menuAnimationView = [[SRSplashScreenAnimationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //self.menuAnimationView = [[SRSplashScreenAnimationView alloc] init];
     
     [self setupBlurryBackground:^(BOOL done) {
         if (done) {
             
             [self makeAdjustmentsToAnimatedMenu];
-            [self.menuAnimationView addShowSplashMenuAnimationAndRemoveOnCompletion:NO];
-            
+            [self showMenuView:nil];
         }
     }];
     
@@ -67,11 +67,10 @@ static CGFloat kIconSize = 44.0;
     
     [self.view addSubview:backgroundImageView];
     [backgroundImageView addSubview:blurEffectView];
-    
-    [self.view addSubview:self.menuAnimationView]; 
-    
+
     // makes sure that view has been added to the hierarchy
     if ( [[[[self.view subviews] objectEnumerator] allObjects] containsObject:backgroundImageView]) {
+        
         complete(YES);
     }
     
@@ -108,12 +107,8 @@ static CGFloat kIconSize = 44.0;
     [self.menuBackgroundView setBackgroundColor:[SRNYTimesStyle gray226]];
     [self.menuBackgroundView.layer setBorderWidth:kViewBorderWidth];
     [self.menuBackgroundView.layer setBorderColor:[SRNYTimesStyle gray165].CGColor];
+    [self.menuBackgroundView.layer setCornerRadius:kViewCornerRadius];
     [self.menuBackgroundView.layer setMasksToBounds:YES];
-    
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.bounds = self.menuBackgroundView.bounds; // bounds are not correctly calculating at this point in the code
-    gradient.colors = @[ (id)[SRNYTimesStyle gray246].CGColor, (id)[SRNYTimesStyle gray24].CGColor];
-    //[self.menuBackgroundView.layer addSublayer:gradient];
     
     // -- Logo View -- //
     self.NYTLogoView = self.menuAnimationView.logoView;
@@ -132,23 +127,32 @@ static CGFloat kIconSize = 44.0;
     [self.navigationDemoButton  addTarget:self action:@selector(dismissMenuView:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void) showMenuView:(id)sender{
+    
+    UIButton * resetButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 50, 50)];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.view addSubview:self.menuAnimationView];
+        
+        resetButton.backgroundColor = [SRNYTimesStyle redBreakingNews];
+        [self.menuAnimationView.menuBackground setUserInteractionEnabled:YES];
+        [self.menuAnimationView addSubview:resetButton];
+    }];
+    
+    [resetButton addTarget:self action:@selector(showMenuView:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.menuAnimationView addShowSplashMenuAnimationAndRemoveOnCompletion:YES];
+}
 -(void) dismissMenuView:(id)sender{
-    typeof(SRSplashScreenAnimationView) __weak *weakAnimationView = self.menuAnimationView;
-    
-    
+
+    typeof(SRSplashScreenAnimationView *) __weak weakAnimationView = self.menuAnimationView;
     [self.menuAnimationView removeAllAnimations];
     [self.menuAnimationView addDismissSplashMenuAnimationWithBeginTime:0.0 andFillMode:kCAFillModeBoth andRemoveOnCompletion:YES completion:^(BOOL finished) {
         if (finished) {
-            typeof(SRSplashScreenAnimationView) __strong *strongAnimationView = weakAnimationView;
-            [strongAnimationView addShowSplashMenuAnimation];
+            [weakAnimationView removeAllAnimations];
         }
     }];
     
-
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"Event: %@", event);
+    
 }
 
 -(BOOL)prefersStatusBarHidden{return YES;}
