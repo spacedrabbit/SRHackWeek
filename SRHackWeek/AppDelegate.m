@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SRSplashScreen.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+  
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    SRSplashScreen * splashScreen = [[SRSplashScreen alloc] init];
+    [splashScreen.view setFrame:self.window.bounds];
+    [splashScreen.view setBackgroundColor:[UIColor grayColor]];
+    
+    self.window.rootViewController = splashScreen;
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25868F051AB889C400300CA1 /* SRSelectionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25868F041AB889C400300CA1 /* SRSelectionMenuView.m */; };
 		2598520E1AB87DC500F79824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2598520D1AB87DC500F79824 /* main.m */; };
 		259852111AB87DC500F79824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852101AB87DC500F79824 /* AppDelegate.m */; };
-		259852141AB87DC500F79824 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852131AB87DC500F79824 /* ViewController.m */; };
 		259852171AB87DC500F79824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259852151AB87DC500F79824 /* Main.storyboard */; };
 		259852191AB87DC500F79824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259852181AB87DC500F79824 /* Images.xcassets */; };
 		2598521C1AB87DC500F79824 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2598521A1AB87DC500F79824 /* LaunchScreen.xib */; };
 		259852281AB87DC500F79824 /* SRHackWeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852271AB87DC500F79824 /* SRHackWeekTests.m */; };
+		259852331AB8815900F79824 /* SRSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852321AB8815900F79824 /* SRSplashScreen.m */; };
+		259852361AB8818800F79824 /* Cat-on-computer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 259852341AB8818800F79824 /* Cat-on-computer.jpg */; };
+		259852371AB8818800F79824 /* NYTLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 259852351AB8818800F79824 /* NYTLogo.png */; };
+		25AAE2FC1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AAE2FB1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m */; };
+		25AAE3001AB8C73C00E8D3C1 /* sliderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25AAE2FE1AB8C73C00E8D3C1 /* sliderIcon@2x.png */; };
+		25AAE3011AB8C73C00E8D3C1 /* toastIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25AAE2FF1AB8C73C00E8D3C1 /* toastIcon@2x.png */; };
+		25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +34,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25868F031AB889C400300CA1 /* SRSelectionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSelectionMenuView.h; sourceTree = "<group>"; };
+		25868F041AB889C400300CA1 /* SRSelectionMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSelectionMenuView.m; sourceTree = "<group>"; };
 		259852081AB87DC500F79824 /* SRHackWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRHackWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2598520C1AB87DC500F79824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2598520D1AB87DC500F79824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2598520F1AB87DC500F79824 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		259852101AB87DC500F79824 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		259852121AB87DC500F79824 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		259852131AB87DC500F79824 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		259852161AB87DC500F79824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		259852181AB87DC500F79824 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2598521B1AB87DC500F79824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		259852211AB87DC500F79824 /* SRHackWeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRHackWeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259852261AB87DC500F79824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		259852271AB87DC500F79824 /* SRHackWeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRHackWeekTests.m; sourceTree = "<group>"; };
+		259852311AB8815900F79824 /* SRSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSplashScreen.h; sourceTree = "<group>"; };
+		259852321AB8815900F79824 /* SRSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSplashScreen.m; sourceTree = "<group>"; };
+		259852341AB8818800F79824 /* Cat-on-computer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cat-on-computer.jpg"; sourceTree = "<group>"; };
+		259852351AB8818800F79824 /* NYTLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYTLogo.png; sourceTree = "<group>"; };
+		25AAE2FA1AB8C6FE00E8D3C1 /* SRNYTimesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNYTimesStyle.h; sourceTree = "<group>"; };
+		25AAE2FB1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNYTimesStyle.m; sourceTree = "<group>"; };
+		25AAE2FE1AB8C73C00E8D3C1 /* sliderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderIcon@2x.png"; sourceTree = "<group>"; };
+		25AAE2FF1AB8C73C00E8D3C1 /* toastIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toastIcon@2x.png"; sourceTree = "<group>"; };
+		25AAE3031AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSplashScreenAnimationView.h; sourceTree = "<group>"; };
+		25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSplashScreenAnimationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +98,13 @@
 		2598520A1AB87DC500F79824 /* SRHackWeek */ = {
 			isa = PBXGroup;
 			children = (
+				25AAE2F91AB8C6DF00E8D3C1 /* UIStyles */,
 				2598520F1AB87DC500F79824 /* AppDelegate.h */,
 				259852101AB87DC500F79824 /* AppDelegate.m */,
-				259852121AB87DC500F79824 /* ViewController.h */,
-				259852131AB87DC500F79824 /* ViewController.m */,
-				259852151AB87DC500F79824 /* Main.storyboard */,
-				259852181AB87DC500F79824 /* Images.xcassets */,
-				2598521A1AB87DC500F79824 /* LaunchScreen.xib */,
+				259852311AB8815900F79824 /* SRSplashScreen.h */,
+				259852321AB8815900F79824 /* SRSplashScreen.m */,
+				25868F031AB889C400300CA1 /* SRSelectionMenuView.h */,
+				25868F041AB889C400300CA1 /* SRSelectionMenuView.m */,
 				2598520B1AB87DC500F79824 /* Supporting Files */,
 			);
 			path = SRHackWeek;
@@ -96,6 +113,10 @@
 		2598520B1AB87DC500F79824 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				259852381AB8819100F79824 /* Images */,
+				259852181AB87DC500F79824 /* Images.xcassets */,
+				259852151AB87DC500F79824 /* Main.storyboard */,
+				2598521A1AB87DC500F79824 /* LaunchScreen.xib */,
 				2598520C1AB87DC500F79824 /* Info.plist */,
 				2598520D1AB87DC500F79824 /* main.m */,
 			);
@@ -117,6 +138,44 @@
 				259852261AB87DC500F79824 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		259852381AB8819100F79824 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				259852341AB8818800F79824 /* Cat-on-computer.jpg */,
+				259852351AB8818800F79824 /* NYTLogo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		25AAE2F91AB8C6DF00E8D3C1 /* UIStyles */ = {
+			isa = PBXGroup;
+			children = (
+				25AAE3021AB8CB9A00E8D3C1 /* UIAnimations */,
+				25AAE2FA1AB8C6FE00E8D3C1 /* SRNYTimesStyle.h */,
+				25AAE2FB1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m */,
+				25AAE2FD1AB8C73C00E8D3C1 /* images */,
+			);
+			name = UIStyles;
+			sourceTree = "<group>";
+		};
+		25AAE2FD1AB8C73C00E8D3C1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				25AAE2FE1AB8C73C00E8D3C1 /* sliderIcon@2x.png */,
+				25AAE2FF1AB8C73C00E8D3C1 /* toastIcon@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		25AAE3021AB8CB9A00E8D3C1 /* UIAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				25AAE3031AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.h */,
+				25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */,
+			);
+			name = UIAnimations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +227,7 @@
 				TargetAttributes = {
 					259852071AB87DC500F79824 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3457AE227Q;
 					};
 					259852201AB87DC500F79824 = {
 						CreatedOnToolsVersion = 6.2;
@@ -199,8 +259,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259852361AB8818800F79824 /* Cat-on-computer.jpg in Resources */,
 				259852171AB87DC500F79824 /* Main.storyboard in Resources */,
+				259852371AB8818800F79824 /* NYTLogo.png in Resources */,
 				2598521C1AB87DC500F79824 /* LaunchScreen.xib in Resources */,
+				25AAE3011AB8C73C00E8D3C1 /* toastIcon@2x.png in Resources */,
+				25AAE3001AB8C73C00E8D3C1 /* sliderIcon@2x.png in Resources */,
 				259852191AB87DC500F79824 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				259852141AB87DC500F79824 /* ViewController.m in Sources */,
+				25AAE2FC1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m in Sources */,
 				259852111AB87DC500F79824 /* AppDelegate.m in Sources */,
 				2598520E1AB87DC500F79824 /* main.m in Sources */,
+				25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */,
+				259852331AB8815900F79824 /* SRSplashScreen.m in Sources */,
+				25868F051AB889C400300CA1 /* SRSelectionMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SRHackWeek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SRHackWeek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +481,7 @@
 				2598522D1AB87DC500F79824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2598522E1AB87DC500F79824 /* Build configuration list for PBXNativeTarget "SRHackWeekTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +490,7 @@
 				259852301AB87DC500F79824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

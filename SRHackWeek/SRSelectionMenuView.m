@@ -1,15 +1,15 @@
 //
-//  ViewController.h
+//  SRSelectionMenuView.m
 //  SRHackWeek
 //
 //  Created by Tur, Louis on 3/17/15.
 //  Copyright (c) 2015 Tur, Louis. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SRSelectionMenuView.h"
 
-@interface ViewController : UIViewController
+@implementation SRSelectionMenuView
+
 
 
 @end
-
