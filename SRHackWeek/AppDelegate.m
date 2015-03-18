@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SRSplashScreen.h"
+#import "SRSplashScreenViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
   
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    SRSplashScreen * splashScreen = [[SRSplashScreen alloc] init];
+    SRSplashScreenViewController * splashScreen = [[SRSplashScreenViewController alloc] init];
     [splashScreen.view setFrame:self.window.bounds];
     [splashScreen.view setBackgroundColor:[UIColor grayColor]];
     

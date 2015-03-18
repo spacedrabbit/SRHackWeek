@@ -7,9 +7,9 @@
 //
 
 #import "SRNYTimesStyle.h"
-#import "SRSplashScreen.h"
+#import "SRSplashScreenViewController.h"
 #import "SRSplashScreenAnimationView.h"
-#import <time.h>
+#import "SRToastNotificationsViewController.h"
 
 static NSString * const kToastButtonTitle = @"Toasty";
 static NSString * const kSlideButtonTitle = @"Horizontal Menu";
@@ -19,7 +19,7 @@ static CGFloat kViewBorderWidth = 3.0;
 static CGFloat kIconSize = 44.0;
 
 
-@interface SRSplashScreen ()
+@interface SRSplashScreenViewController ()
 
 @property (strong, nonatomic) SRSplashScreenAnimationView * menuAnimationView;
 @property (strong, nonatomic) UIButton * toastDemoButton;
@@ -29,9 +29,7 @@ static CGFloat kIconSize = 44.0;
 
 @end
 
-@implementation SRSplashScreen{
-    CGSize kIconBounds;
-}
+@implementation SRSplashScreenViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,13 +38,10 @@ static CGFloat kIconSize = 44.0;
     
     [self setupBlurryBackground:^(BOOL done) {
         if (done) {
-            
             [self makeAdjustmentsToAnimatedMenu];
-            [self.menuAnimationView addShowSplashMenuAnimationAndRemoveOnCompletion:NO];
-            
+            [self showMenuView:nil];
         }
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +49,10 @@ static CGFloat kIconSize = 44.0;
     
 }
 
+#pragma mark - BACKGROUND AND VIEW SETUP
+/** Adds background image and blur effect to landing view. If view is successfully added to view hierarchy, returns YES
+ *
+ */
 -(void) setupBlurryBackground:(void(^)(BOOL))complete{
     
     UIImage * splashScreenBackgroundImage = [UIImage imageNamed:@"Cat-on-computer.jpg"];
@@ -74,9 +73,11 @@ static CGFloat kIconSize = 44.0;
     if ( [[[[self.view subviews] objectEnumerator] allObjects] containsObject:backgroundImageView]) {
         complete(YES);
     }
-    
 }
 
+/** Adds UI Customizations to scaffolded animation view, including setting iVar references for later use
+ *
+ */
 -(void) makeAdjustmentsToAnimatedMenu{
     
 
@@ -89,6 +90,7 @@ static CGFloat kIconSize = 44.0;
     self.toastDemoButton = [[UIButton alloc] initWithFrame:self.menuAnimationView.topButton.bounds];
     [self.toastDemoButton setImage:toastButtonImage forState:UIControlStateNormal];
     [self.toastDemoButton setImage:toastButtonImagePressed forState:UIControlStateHighlighted];
+    [self.toastDemoButton setTag:1];
     [self.menuAnimationView.topButton setUserInteractionEnabled:YES];
     [self.menuAnimationView.topButton addSubview:self.toastDemoButton];
     
@@ -109,11 +111,7 @@ static CGFloat kIconSize = 44.0;
     [self.menuBackgroundView.layer setBorderWidth:kViewBorderWidth];
     [self.menuBackgroundView.layer setBorderColor:[SRNYTimesStyle gray165].CGColor];
     [self.menuBackgroundView.layer setMasksToBounds:YES];
-    
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.bounds = self.menuBackgroundView.bounds; // bounds are not correctly calculating at this point in the code
-    gradient.colors = @[ (id)[SRNYTimesStyle gray246].CGColor, (id)[SRNYTimesStyle gray24].CGColor];
-    //[self.menuBackgroundView.layer addSublayer:gradient];
+    [self.menuBackgroundView.layer setCornerRadius:kViewCornerRadius];
     
     // -- Logo View -- //
     self.NYTLogoView = self.menuAnimationView.logoView;
@@ -127,29 +125,43 @@ static CGFloat kIconSize = 44.0;
     [self addActionsToMenuButtons];
 }
 
+-(BOOL)prefersStatusBarHidden{return YES;}
+
+#pragma mark - ADDING ACTIONS
+/** Adds actions to menu buttons
+ */
 -(void) addActionsToMenuButtons{
     [self.toastDemoButton       addTarget:self action:@selector(dismissMenuView:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationDemoButton  addTarget:self action:@selector(dismissMenuView:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void) dismissMenuView:(id)sender{
-    typeof(SRSplashScreenAnimationView) __weak *weakAnimationView = self.menuAnimationView;
+/** Convinience method to show menu animation
+ */
+-(void) showMenuView:(id)sender {
+    [self.menuAnimationView addShowSplashMenuAnimationAndRemoveOnCompletion:NO];
+}
+
+/** Convinience method to dismiss menu animation
+ */
+-(void) dismissMenuView:(id)sender {
     
+    UIButton *pressedButton = (UIButton *)sender;
+    typeof(self) __weak weakSelf = self;
     
     [self.menuAnimationView removeAllAnimations];
-    [self.menuAnimationView addDismissSplashMenuAnimationWithBeginTime:0.0 andFillMode:kCAFillModeBoth andRemoveOnCompletion:YES completion:^(BOOL finished) {
+    [self.menuAnimationView addDismissSplashMenuAnimationWithCompletion:^(BOOL finished) {
         if (finished) {
-            typeof(SRSplashScreenAnimationView) __strong *strongAnimationView = weakAnimationView;
-            [strongAnimationView addShowSplashMenuAnimation];
+            if ( pressedButton.tag == 1 ) {
+
+                SRToastNotificationsViewController * tnvc = [[SRToastNotificationsViewController alloc] init];
+                UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:tnvc];
+                
+                [weakSelf presentViewController:navController animated:YES completion:^{
+                }];
+            }
         }
     }];
     
-
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"Event: %@", event);
-}
-
--(BOOL)prefersStatusBarHidden{return YES;}
 @end
