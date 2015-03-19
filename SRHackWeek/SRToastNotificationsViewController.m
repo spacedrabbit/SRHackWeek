@@ -13,8 +13,6 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
 
 @interface SRToastNotificationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-//@property (strong, nonatomic) UINavigationController * navigationController;
-
 @end
 
 @implementation SRToastNotificationsViewController
