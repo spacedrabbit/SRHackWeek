@@ -17,5 +17,13 @@
                            publishDate:(NSString *)date
                             multimedia:(NSDictionary *)multimedia
                                andTags:(NSDictionary *)tags;
++(instancetype)createArticleFromJSONResponse:(NSDictionary *) topStoriesJSON;
 
+-(instancetype) initWithTitle:(NSString *)title
+                     abstract:(NSString *)abstract
+                       byLine:(NSString *)byLine
+                    urlString:(NSString *)urlString
+                  publishDate:(NSString *)date
+                   multimedia:(NSDictionary *)multimedia
+                      andTags:(NSDictionary *)tags;
 @end
