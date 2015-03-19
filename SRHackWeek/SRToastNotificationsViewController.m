@@ -7,11 +7,14 @@
 //
 
 #import "SRNYTimesStyle.h"
+#import "SRNYTimesAPIManager.h"
+#import "SRToastNotificationView.h"
 #import "SRToastNotificationsViewController.h"
 
-static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1:71242787";
 
 @interface SRToastNotificationsViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) SRNYTimesAPIManager * sharedManager;
 
 @end
 
@@ -20,16 +23,25 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    [[UINavigationBar appearance] setBarTintColor:[SRNYTimesStyle gray246]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:24.0] }];
-    self.navigationController.navigationBar.topItem.title = @"Toasty";
+    self.sharedManager = [SRNYTimesAPIManager sharedAPIManager];
+    
+    [self addNavigationBarAndConfigure];
+    [self.sharedManager retrieveTopStories:12 completion:^(NSArray * topStories) {
+        NSLog(@"Completion of stories retrieval block");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+-(void) addNavigationBarAndConfigure{
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    [[UINavigationBar appearance] setBarTintColor:[SRNYTimesStyle gray246]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:24.0] }];
+    self.navigationController.navigationBar.topItem.title = @"Toasty";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,6 +60,10 @@ static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 120.0;
 }
 
 -(BOOL)prefersStatusBarHidden{ return YES; }
