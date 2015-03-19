@@ -1,0 +1,768 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2015 The New York Times Company. All Rights Reserved.",
+    "last_updated": "2015-03-19T18:40:03-05:00",
+    "num_results": 17,
+    "results": [
+        {
+            "section": "World",
+            "subsection": "Middle East",
+            "title": "White House Unimpressed by Israeli Leader’s Reversal",
+            "abstract": "In his first interview since his re-election victory, Prime Minister Benjamin Netanyahu of Israel walked back his rejection of a two-state solution, but the Obama administration remained concerned.",
+            "url": "http://www.nytimes.com/2015/03/20/world/middleeast/israel-netanyahu-elections-palestinian-state.html",
+            "byline": "By JODI RUDOREN and MICHAEL D. SHEAR",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T15:45:14-5:00",
+            "created_date": "2015-03-19T12:40:53-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Palestinians"
+            ],
+            "org_facet": "",
+            "per_facet": [
+                "Netanyahu, Benjamin"
+            ],
+            "geo_facet": [
+                "Israel"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "World",
+            "subsection": "Middle East",
+            "title": "Arabs See Unity as Vehicle for Progress",
+            "abstract": "The disparate group of lawmakers in Israel’s legislature is demanding seats on major parliamentary committees and influence in decisions on Arab schools.",
+            "url": "http://www.nytimes.com/2015/03/20/world/middleeast/arab-alliance-in-israeli-legislature-sees-unity-as-vehicle-for-progress.html",
+            "byline": "By JODI RUDOREN and DIAA HADID",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T17:44:22-5:00",
+            "created_date": "2015-03-19T17:44:29-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Arabs",
+                "Legislatures and Parliaments"
+            ],
+            "org_facet": "",
+            "per_facet": [
+                "Odeh, Ayman (1975- )"
+            ],
+            "geo_facet": [
+                "Israel"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "N.Y. / Region",
+            "subsection": "",
+            "title": "In Garner Case, Judge Rules Against Releasing Evidence",
+            "abstract": "Justice William E. Garnett of State Supreme Court on Staten Island said the parties seeking disclosure of the evidence had failed to establish a “compelling” need.",
+            "url": "http://www.nytimes.com/2015/03/20/nyregion/in-eric-garner-case-judge-rules-against-releasing-grand-jury-evidence.html",
+            "byline": "By AL BAKER",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T18:26:34-5:00",
+            "created_date": "2015-03-19T15:50:28-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Police Brutality, Misconduct and Shootings"
+            ],
+            "org_facet": "",
+            "per_facet": [
+                "Garner, Eric"
+            ],
+            "geo_facet": [
+                "Staten Island (NYC)"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "Business Day",
+            "subsection": "DealBook",
+            "title": "Bank of New York Mellon to Pay $714 Million Settlement",
+            "abstract": "The settlement with federal and state authorities is part of a broader deal requiring the bank to overhaul its foreign exchange operation in response to accusations that it cheated investors for more than a decade.",
+            "url": "http://www.nytimes.com/2015/03/20/business/dealbook/bank-of-new-york-mellon-to-pay-714-million-in-foreign-exchange-settlement.html",
+            "byline": "By BEN PROTESS",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T17:06:10-5:00",
+            "created_date": "2015-03-19T16:36:14-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Banking and Financial Institutions",
+                "Currency"
+            ],
+            "org_facet": [
+                "Bank of New York Mellon Corporation"
+            ],
+            "per_facet": [
+                "Bharara, Preet",
+                "Schneiderman, Eric T"
+            ],
+            "geo_facet": "",
+            "multimedia": ""
+        },
+        {
+            "section": "Sports",
+            "subsection": "College Basketball",
+            "title": "Big Upsets on Day 1 of N.C.A.A. Tournament",
+            "abstract": "No. 14 University of Alabama-Birmingham defeated No. 3 Iowa State, and No. 14 Georgia State defeated No. 3 Baylor.",
+            "url": "http://www.nytimes.com/2015/03/20/sports/ncaabasketball/georgia-states-long-3-pointer-eliminates-no-3-baylor.html",
+            "byline": "By TOM SPOUSTA",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T18:16:54-5:00",
+            "created_date": "2015-03-19T16:25:34-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "NCAA Basketball Championships (Men)"
+            ],
+            "org_facet": [
+                "Georgia State University",
+                "Baylor University"
+            ],
+            "per_facet": [
+                "Hunter, R J (1993- )",
+                "Hunter, Ron (1964- )"
+            ],
+            "geo_facet": "",
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/sports/20baylor1/20baylor1-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Georgia State players celebrated with R.J. Hunter (22) after he made the game-winning shot against Baylor late in the second half on Thursday.",
+                    "copyright": "Kevin C. Cox/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/sports/20baylor1/20baylor1-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Georgia State players celebrated with R.J. Hunter (22) after he made the game-winning shot against Baylor late in the second half on Thursday.",
+                    "copyright": "Kevin C. Cox/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/sports/20baylor1/20baylor1-articleInline-v2.jpg",
+                    "format": "Normal",
+                    "height": 127,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Georgia State players celebrated with R.J. Hunter (22) after he made the game-winning shot against Baylor late in the second half on Thursday.",
+                    "copyright": "Kevin C. Cox/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/sports/20baylor1/20baylor1-mediumThreeByTwo210-v2.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Georgia State players celebrated with R.J. Hunter (22) after he made the game-winning shot against Baylor late in the second half on Thursday.",
+                    "copyright": "Kevin C. Cox/Getty Images"
+                }
+            ]
+        },
+        {
+            "section": "Style",
+            "subsection": "",
+            "title": "Monica Lewinsky Is Back, This Time on Her Terms",
+            "abstract": "Once vilified as a “predatory” White House intern, Ms. Lewinsky has re-emerged, taking on the fight against cyberbullying.",
+            "url": "http://www.nytimes.com/2015/03/22/style/monica-lewinsky-is-back-but-this-time-its-on-her-terms.html",
+            "byline": "By JESSICA BENNETT",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T17:32:31-5:00",
+            "created_date": "2015-03-19T16:01:08-5:00",
+            "published_date": "2015-03-22T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "TED Conference",
+                "Women and Girls"
+            ],
+            "org_facet": "",
+            "per_facet": [
+                "Lewinsky, Monica S"
+            ],
+            "geo_facet": "",
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/fashion/22MONICA_1/22MONICA_1-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Monica Lewinsky.",
+                    "copyright": "Damon Winter/The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/fashion/22MONICA_1/22MONICA_1-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Monica Lewinsky.",
+                    "copyright": "Damon Winter/The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/fashion/22MONICA_1/22MONICA_1-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 127,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Monica Lewinsky.",
+                    "copyright": "Damon Winter/The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/fashion/22MONICA_1/22MONICA_1-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Monica Lewinsky.",
+                    "copyright": "Damon Winter/The New York Times"
+                }
+            ]
+        },
+        {
+            "section": "Business Day",
+            "subsection": "Economy",
+            "title": "Public Sector Rules Exempt Police and Firefighters",
+            "abstract": "Recent labor legislation, such as measures to curb collective bargaining, often makes exceptions for public safety workers.",
+            "url": "http://www.nytimes.com/2015/03/20/business/economy/police-officers-and-firefighters-are-exceptions-to-new-public-sector-rules.html",
+            "byline": "By NOAM SCHEIBER",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T17:47:20-5:00",
+            "created_date": "2015-03-19T17:47:27-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News Analysis",
+            "kicker": "",
+            "des_facet": [
+                "Government Employees",
+                "Collective Bargaining",
+                "Police",
+                "Fires and Firefighters",
+                "States (US)",
+                "Law and Legislation"
+            ],
+            "org_facet": "",
+            "per_facet": "",
+            "geo_facet": "",
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20labor1-web/20labor1-web-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Police officers and firefighters can retire with full pensions at younger ages than other state employees.",
+                    "copyright": "Andrew Burton/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20labor1-web/20labor1-web-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Police officers and firefighters can retire with full pensions at younger ages than other state employees.",
+                    "copyright": "Andrew Burton/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20labor1-web/20labor1-web-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 127,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Police officers and firefighters can retire with full pensions at younger ages than other state employees.",
+                    "copyright": "Andrew Burton/Getty Images"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20labor1-web/20labor1-web-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Police officers and firefighters can retire with full pensions at younger ages than other state employees.",
+                    "copyright": "Andrew Burton/Getty Images"
+                }
+            ]
+        },
+        {
+            "section": "U.S.",
+            "subsection": "",
+            "title": "In 2016 Test, Kasich Trumpets ‘Ohio Story’",
+            "abstract": "As Gov. John R. Kasich visits New Hampshire, Manhattan and Detroit, he must find a way to distinguish himself from an already overcrowded Republican pack.",
+            "url": "http://www.nytimes.com/2015/03/20/us/kasich-looks-to-republican-primaries-ohio-story-in-hand.html",
+            "byline": "By SHERYL GAY STOLBERG",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T12:07:21-5:00",
+            "created_date": "2015-03-19T12:07:28-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Presidential Election of 2016"
+            ],
+            "org_facet": [
+                "Republican Party"
+            ],
+            "per_facet": [
+                "Kasich, John R",
+                "Walker, Scott K"
+            ],
+            "geo_facet": [
+                "Ohio"
+            ],
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/19/us/20KASICHWEB1/20KASICHWEB1-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Gov. John R. Kasich, center, of Ohio with former Gov. William F. Weld, right, of Massachusetts at the governor&rsquo;s residence in Columbus, Ohio, last week. Mr. Kasich will visit New Hampshire and Manhattan next week.",
+                    "copyright": "Maddie McGarvey for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/19/us/20KASICHWEB1/20KASICHWEB1-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Gov. John R. Kasich, center, of Ohio with former Gov. William F. Weld, right, of Massachusetts at the governor&rsquo;s residence in Columbus, Ohio, last week. Mr. Kasich will visit New Hampshire and Manhattan next week.",
+                    "copyright": "Maddie McGarvey for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/19/us/20KASICHWEB1/20KASICHWEB1-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 127,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Gov. John R. Kasich, center, of Ohio with former Gov. William F. Weld, right, of Massachusetts at the governor&rsquo;s residence in Columbus, Ohio, last week. Mr. Kasich will visit New Hampshire and Manhattan next week.",
+                    "copyright": "Maddie McGarvey for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/19/us/20KASICHWEB1/20KASICHWEB1-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Gov. John R. Kasich, center, of Ohio with former Gov. William F. Weld, right, of Massachusetts at the governor&rsquo;s residence in Columbus, Ohio, last week. Mr. Kasich will visit New Hampshire and Manhattan next week.",
+                    "copyright": "Maddie McGarvey for The New York Times"
+                }
+            ]
+        },
+        {
+            "section": "Business Day",
+            "subsection": "DealBook",
+            "title": "As Fewer Pass the Bar, the Exam Itself Is Questioned",
+            "abstract": "The rite of passage is facing scrutiny by law school deans after a recent round of test takers had the poorest results in a decade.",
+            "url": "http://www.nytimes.com/2015/03/20/business/dealbook/bar-exam-the-standard-to-become-a-lawyer-comes-under-fire.html",
+            "byline": "By ELIZABETH OLSON",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T13:28:49-5:00",
+            "created_date": "2015-03-19T13:28:56-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Law Schools",
+                "Tests and Examinations",
+                "Legal Profession"
+            ],
+            "org_facet": "",
+            "per_facet": "",
+            "geo_facet": [
+                "Arizona",
+                "Iowa",
+                "New Hampshire"
+            ],
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20150320DB-BAREXAM-SS-slide-27QH/20150320DB-BAREXAM-SS-slide-27QH-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew Holland, a third-year student at the&nbsp;University of New Hampshire School of Law, is participating in a program that allows him to skip the bar exam and go directly into practice.",
+                    "copyright": "Ian Thomas Jansen-Lonnquist for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20150320DB-BAREXAM-SS-slide-27QH/20150320DB-BAREXAM-SS-slide-27QH-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew Holland, a third-year student at the&nbsp;University of New Hampshire School of Law, is participating in a program that allows him to skip the bar exam and go directly into practice.",
+                    "copyright": "Ian Thomas Jansen-Lonnquist for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20150320DB-BAREXAM-SS-slide-27QH/20150320DB-BAREXAM-SS-slide-27QH-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 126,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew Holland, a third-year student at the&nbsp;University of New Hampshire School of Law, is participating in a program that allows him to skip the bar exam and go directly into practice.",
+                    "copyright": "Ian Thomas Jansen-Lonnquist for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/business/20150320DB-BAREXAM-SS-slide-27QH/20150320DB-BAREXAM-SS-slide-27QH-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew Holland, a third-year student at the&nbsp;University of New Hampshire School of Law, is participating in a program that allows him to skip the bar exam and go directly into practice.",
+                    "copyright": "Ian Thomas Jansen-Lonnquist for The New York Times"
+                }
+            ]
+        },
+        {
+            "section": "N.Y. / Region",
+            "subsection": "",
+            "title": "Victim of 9/11 Attack Is Positively Identified",
+            "abstract": "Matthew David Yarnell was identified through retesting of DNA samples obtained from human remains recovered in 2001 and 2002, according to the authorities.",
+            "url": "http://www.nytimes.com/2015/03/20/nyregion/victim-of-9-11-trade-center-attack-is-positively-identified.html",
+            "byline": "By DAVID W. DUNLAP",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T17:05:09-5:00",
+            "created_date": "2015-03-19T17:05:17-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "September 11 (2001)",
+                "World Trade Center (Manhattan, NY)"
+            ],
+            "org_facet": "",
+            "per_facet": "",
+            "geo_facet": [
+                "New York City"
+            ],
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/nyregion/20VICTIMWEB/20VICTIMWEB-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew D. Yarnell, a victim of the Sept. 11, 2001, terrorist attack on the World Trade Center. Retesting of DNA samples from human remains positively identified him, city officials said on Thursday.",
+                    "copyright": ""
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/nyregion/20VICTIMWEB/20VICTIMWEB-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew D. Yarnell, a victim of the Sept. 11, 2001, terrorist attack on the World Trade Center. Retesting of DNA samples from human remains positively identified him, city officials said on Thursday.",
+                    "copyright": ""
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/nyregion/20VICTIMWEB/20VICTIMWEB-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 140,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew D. Yarnell, a victim of the Sept. 11, 2001, terrorist attack on the World Trade Center. Retesting of DNA samples from human remains positively identified him, city officials said on Thursday.",
+                    "copyright": ""
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/nyregion/20VICTIMWEB/20VICTIMWEB-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Matthew D. Yarnell, a victim of the Sept. 11, 2001, terrorist attack on the World Trade Center. Retesting of DNA samples from human remains positively identified him, city officials said on Thursday.",
+                    "copyright": ""
+                }
+            ]
+        },
+        {
+            "section": "N.Y. / Region",
+            "subsection": "",
+            "title": "Body of Missing Reporter, David Bird, Is Found",
+            "abstract": "Mr. Bird&#8217;s body was pulled from the Passaic River in New Jersey, more than a year after he disappeared while out walking near his home.",
+            "url": "http://www.nytimes.com/2015/03/20/nyregion/body-of-missing-reporter-david-bird-is-pulled-from-passaic-river.html",
+            "byline": "By AL BAKER",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T15:08:53-5:00",
+            "created_date": "2015-03-19T15:09:02-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Missing Persons"
+            ],
+            "org_facet": [
+                "Wall Street Journal"
+            ],
+            "per_facet": [
+                "Bird, David"
+            ],
+            "geo_facet": [
+                "Passaic River (NJ)"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "World",
+            "subsection": "Americas",
+            "title": "Argentine Prosecutor Asks to Reopen Case on President",
+            "abstract": "The prosecutor said an investigation into allegations against President Cristina Fernández de Kirchner and other officials, dismissed by a judge last month, should resume.",
+            "url": "http://www.nytimes.com/2015/03/20/world/americas/argentine-prosecutor-urges-reopening-of-case-against-president.html",
+            "byline": "By JONATHAN GILBERT",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T16:55:00-5:00",
+            "created_date": "2015-03-19T16:55:07-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": "",
+            "org_facet": "",
+            "per_facet": [
+                "Kirchner, Cristina Fernandez de",
+                "Moldes, German",
+                "Nisman, Alberto",
+                "Rafecas, Daniel E (1967- )"
+            ],
+            "geo_facet": [
+                "Argentina"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "World",
+            "subsection": "Africa",
+            "title": "Tunisia Announces Arrests Tied to Museum Attack",
+            "abstract": "Officials said that no link had been established between the two gunmen who carried out Wednesday’s rampage and any known terrorist organization.",
+            "url": "http://www.nytimes.com/2015/03/20/world/africa/no-links-seen-between-terrorists-and-gunmen-in-tunisia-museum-attack-premier-says.html",
+            "byline": "By DAVID D. KIRKPATRICK",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T13:29:07-5:00",
+            "created_date": "2015-03-19T05:48:27-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Terrorism"
+            ],
+            "org_facet": [
+                "National Bardo Museum (Tunis, Tunisia)"
+            ],
+            "per_facet": "",
+            "geo_facet": [
+                "Tunisia"
+            ],
+            "multimedia": ""
+        },
+        {
+            "section": "Opinion",
+            "subsection": "",
+            "title": "A Tech Column on Wearable Gadgets Draws Fire as ‘Pseudoscience’",
+            "abstract": "Readers, and others, object to “scaremongering” in a Styles column.",
+            "url": "http://publiceditor.blogs.nytimes.com/2015/03/19/a-tech-column-on-wearable-gadgets-draws-fire-as-pseudoscience/",
+            "byline": "By MARGARET SULLIVAN",
+            "item_type": "Blogpost",
+            "updated_date": "2015-03-19T16:56:57-5:00",
+            "created_date": "2015-03-19T14:43:43-5:00",
+            "published_date": "2015-03-19T18:42:05-5:00",
+            "material_type_facet": "News",
+            "kicker": "The Public Editor’s Journal",
+            "des_facet": "",
+            "org_facet": "",
+            "per_facet": "",
+            "geo_facet": "",
+            "multimedia": ""
+        },
+        {
+            "section": "Automobiles",
+            "subsection": "",
+            "title": "Video: Inside Mercedes’s Self-Driving Car",
+            "abstract": "Mercedes-Benz’s concept car doesn’t showcase the technology of autonomous vehicles as much as it does the experience of riding in one.",
+            "url": "http://www.nytimes.com/2015/03/20/automobiles/video-feature-inside-the-f-015-mercedess-self-driving-car.html",
+            "byline": "By MOLLY WOOD",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T15:52:27-5:00",
+            "created_date": "2015-03-19T15:52:34-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Driverless and Semiautonomous Vehicles",
+                "Luxury Goods and Services"
+            ],
+            "org_facet": [
+                "Mercedes-Benz"
+            ],
+            "per_facet": "",
+            "geo_facet": "",
+            "multimedia": ""
+        },
+        {
+            "section": "Magazine",
+            "subsection": "",
+            "title": "Alabama Shakes’s Shape-Shifting Sound",
+            "abstract": "With its highly anticipated second album, this band of small-town misfits finally has a ticket out — not that they would ever leave.",
+            "url": "http://www.nytimes.com/2015/03/22/magazine/alabama-shakess-soul-stirring-shape-shifting-new-sound.html",
+            "byline": "By JOE RHODES",
+            "item_type": "Article",
+            "updated_date": "2015-03-18T06:58:01-5:00",
+            "created_date": "2015-03-18T06:58:13-5:00",
+            "published_date": "2015-03-22T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Rock Music"
+            ],
+            "org_facet": [
+                "Alabama Shakes (Music Group)"
+            ],
+            "per_facet": [
+                "Howard, Brittany"
+            ],
+            "geo_facet": [
+                "Alabama"
+            ],
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/magazine/22shakes1/22mag-22shakes.t_CA2-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Brittany Howard.",
+                    "copyright": "Christaan Felber for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/magazine/22shakes1/22mag-22shakes.t_CA2-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Brittany Howard.",
+                    "copyright": "Christaan Felber for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/magazine/22shakes1/22mag-22shakes.t_CA2-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 120,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Brittany Howard.",
+                    "copyright": "Christaan Felber for The New York Times"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/22/magazine/22shakes1/22mag-22shakes.t_CA2-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Brittany Howard.",
+                    "copyright": "Christaan Felber for The New York Times"
+                }
+            ]
+        },
+        {
+            "section": "Arts",
+            "subsection": "Art & Design",
+            "title": "Exhibition Examines ‘Lincoln and the Jews’",
+            "abstract": "The New-York Historical Society presents the story of Abraham Lincoln’s political career through his interactions with Jewish Americans.",
+            "url": "http://www.nytimes.com/2015/03/20/arts/design/lincoln-and-the-jews-explores-bonds-with-a-nations-growing-minority.html",
+            "byline": "By JENNIFER SCHUESSLER",
+            "item_type": "Article",
+            "updated_date": "2015-03-19T11:37:10-5:00",
+            "created_date": "2015-03-19T11:37:18-5:00",
+            "published_date": "2015-03-20T04:00:00-5:00",
+            "material_type_facet": "News",
+            "kicker": "",
+            "des_facet": [
+                "Museums"
+            ],
+            "org_facet": [
+                "New-York Historical Society"
+            ],
+            "per_facet": [
+                "Lincoln, Abraham"
+            ],
+            "geo_facet": "",
+            "multimedia": [
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/arts/20LINCOLNJUMP1/20LINCOLNJUMP1-thumbStandard.jpg",
+                    "format": "Standard Thumbnail",
+                    "height": 75,
+                    "width": 75,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alonzo Chappel&rsquo;s 1867 painting of Abraham Lincoln on his deathbed is part of the exhibition \"Lincoln and the Jews\" at the New-York Historical Society. The work prominently features Dr. Charles Liebermann, a Russian-born Jewish ophthalmologist and a leading Washington physician, gazing intently at the president.",
+                    "copyright": "Chicago History Museum"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/arts/20LINCOLNJUMP1/20LINCOLNJUMP1-thumbLarge.jpg",
+                    "format": "thumbLarge",
+                    "height": 150,
+                    "width": 150,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alonzo Chappel&rsquo;s 1867 painting of Abraham Lincoln on his deathbed is part of the exhibition \"Lincoln and the Jews\" at the New-York Historical Society. The work prominently features Dr. Charles Liebermann, a Russian-born Jewish ophthalmologist and a leading Washington physician, gazing intently at the president.",
+                    "copyright": "Chicago History Museum"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/arts/20LINCOLNJUMP1/20LINCOLNJUMP1-articleInline.jpg",
+                    "format": "Normal",
+                    "height": 107,
+                    "width": 190,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alonzo Chappel&rsquo;s 1867 painting of Abraham Lincoln on his deathbed is part of the exhibition \"Lincoln and the Jews\" at the New-York Historical Society. The work prominently features Dr. Charles Liebermann, a Russian-born Jewish ophthalmologist and a leading Washington physician, gazing intently at the president.",
+                    "copyright": "Chicago History Museum"
+                },
+                {
+                    "url": "http://static01.nyt.com/images/2015/03/20/arts/20LINCOLNJUMP1/20LINCOLNJUMP1-mediumThreeByTwo210.jpg",
+                    "format": "mediumThreeByTwo210",
+                    "height": 140,
+                    "width": 210,
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "Alonzo Chappel&rsquo;s 1867 painting of Abraham Lincoln on his deathbed is part of the exhibition \"Lincoln and the Jews\" at the New-York Historical Society. The work prominently features Dr. Charles Liebermann, a Russian-born Jewish ophthalmologist and a leading Washington physician, gazing intently at the president.",
+                    "copyright": "Chicago History Museum"
+                }
+            ]
+        }
+    ]
+}

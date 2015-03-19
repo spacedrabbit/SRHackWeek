@@ -8,6 +8,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "SRNYTimesAPIManager.h"
+#import "SRNYTimesArticle.h"
 
 static NSString * const kTopStoriesAPIKey = @"4d868a9601120acae1e6b5af3d81167f:1:71242787";
 static NSString * const kNYTRequestURL = @"http://api.nytimes.com/svc/topstories/v1/home.json?";
@@ -54,9 +55,12 @@ static NSString * const kNYTRequestURL = @"http://api.nytimes.com/svc/topstories
                                                                   completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
     {
         NSLog(@"Request made");
-        
+        NSDictionary * responseObjectDictionary = (NSDictionary *)responseObject;
         if (!error) {
             NSLog(@"The response: %@", responseObject);
+            //NSArray * articles = [SRNYTimesArticle createArticlesFromJSONResponse:responseObjectDictionary];
+            
+            //NSLog(@"Articles! %@", articles);
         }
         else{
             NSLog(@"Request made, but has error: %@", error);

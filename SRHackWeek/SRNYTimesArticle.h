@@ -10,6 +10,7 @@
 
 @interface SRNYTimesArticle : NSObject
 
++(NSArray *)createArticlesFromJSONResponse:(NSDictionary *) topStoriesJSON;
 +(instancetype) createArticleWithTitle:(NSString *)title
                               abstract:(NSString *)abstract
                                 byLine:(NSString *)byLine
@@ -17,14 +18,13 @@
                            publishDate:(NSString *)date
                             multimedia:(NSArray *)multimedia
                                andTags:(NSArray *)tags;
-+(instancetype)createArticleFromJSONResponse:(NSDictionary *) topStoriesJSON;
 
 -(instancetype) initWithTitle:(NSString *)title
                      abstract:(NSString *)abstract
                        byLine:(NSString *)byLine
                     urlString:(NSString *)urlString
                   publishDate:(NSString *)date
-                   multimedia:(NSDictionary *)multimedia
-                      andTags:(NSDictionary *)tags;
+                   multimedia:(NSArray *)multimedia
+                      andTags:(NSArray *)tags;
 
 @end
