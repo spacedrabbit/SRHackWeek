@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2545C8FE1ABB660300CCBA87 /* SRToastNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */; };
 		2598520E1AB87DC500F79824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2598520D1AB87DC500F79824 /* main.m */; };
 		259852111AB87DC500F79824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852101AB87DC500F79824 /* AppDelegate.m */; };
 		259852171AB87DC500F79824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259852151AB87DC500F79824 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2545C8FC1ABB660300CCBA87 /* SRToastNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRToastNotificationView.h; sourceTree = "<group>"; };
+		2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRToastNotificationView.m; sourceTree = "<group>"; };
 		259852081AB87DC500F79824 /* SRHackWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRHackWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2598520C1AB87DC500F79824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2598520D1AB87DC500F79824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		25AAE3021AB8CB9A00E8D3C1 /* UIAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				2545C8FC1ABB660300CCBA87 /* SRToastNotificationView.h */,
+				2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */,
 				25AAE3031AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.h */,
 				25AAE3041AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m */,
 			);
@@ -297,6 +302,7 @@
 			files = (
 				25AAE2FC1AB8C6FE00E8D3C1 /* SRNYTimesStyle.m in Sources */,
 				259852111AB87DC500F79824 /* AppDelegate.m in Sources */,
+				2545C8FE1ABB660300CCBA87 /* SRToastNotificationView.m in Sources */,
 				2598520E1AB87DC500F79824 /* main.m in Sources */,
 				25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */,
 				25AAE30B1AB9E87400E8D3C1 /* SRToastNotificationsViewController.m in Sources */,
