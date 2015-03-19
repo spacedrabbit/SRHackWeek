@@ -15,8 +15,8 @@
                                 byLine:(NSString *)byLine
                              urlString:(NSString *)urlString
                            publishDate:(NSString *)date
-                            multimedia:(NSDictionary *)multimedia
-                               andTags:(NSDictionary *)tags;
+                            multimedia:(NSArray *)multimedia
+                               andTags:(NSArray *)tags;
 +(instancetype)createArticleFromJSONResponse:(NSDictionary *) topStoriesJSON;
 
 -(instancetype) initWithTitle:(NSString *)title
@@ -26,4 +26,5 @@
                   publishDate:(NSString *)date
                    multimedia:(NSDictionary *)multimedia
                       andTags:(NSDictionary *)tags;
+
 @end

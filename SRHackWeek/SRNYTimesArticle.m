@@ -108,8 +108,8 @@
 @property (strong, nonatomic) NSString * articleByLine;
 @property (strong, nonatomic) NSString * articleURLString;
 @property (strong, nonatomic) NSString * articlePublishDate;
-@property (strong, nonatomic) NSDictionary * multimedia;
-@property (strong, nonatomic) NSDictionary * tags;
+@property (strong, nonatomic) NSArray * multimedia;
+@property (strong, nonatomic) NSArray * tags;
 
 @property (strong, nonatomic) NSString * NYTCopyrightInfo;
 
@@ -117,12 +117,10 @@
 
 @implementation SRNYTimesArticle
 
-+(instancetype)createArticleWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSDictionary *)multimedia andTags:(NSDictionary *)tags{
-    
-    
-    
-    
-    return nil;
++(instancetype)createArticleWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags{
+    return [[SRNYTimesArticle alloc] initWithTitle:title abstract:abstract
+                                            byLine:byLine urlString:urlString
+                                       publishDate:date multimedia:multimedia andTags:tags];
 }
 
 +(instancetype)createArticleFromJSONResponse:(NSDictionary *) topStoriesJSON{
@@ -140,20 +138,30 @@
         NSArray * media = [SRNYTimesArticleMultimedia extractMediaItemsFromArticle:newsStory[@"multimedia"]];
         NSArray * tags  = [SRNYTimesArticleTag extractTagsFromArticle:newsStory];
         
+        SRNYTimesArticle * newArticle = [[self class] createArticleWithTitle:title
+                                                                    abstract:abstract
+                                                                      byLine:byLine
+                                                                   urlString:url
+                                                                 publishDate:date
+                                                                  multimedia:media
+                                                                     andTags:tags];
+        
     }
     
     return nil;
 }
 
-
--(instancetype) initWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSDictionary *)multimedia andTags:(NSDictionary *)tags{
+-(instancetype) initWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags{
     
     self = [super init];
     if (self) {
-        
-        
-        
-        
+        _articleTitle = title;
+        _articleAbstract = abstract;
+        _articleByLine = byLine;
+        _articleURLString = urlString;
+        _articlePublishDate = date;
+        _multimedia = multimedia;
+        _tags = tags;
     }
     return self;
 }
