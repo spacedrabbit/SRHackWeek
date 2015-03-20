@@ -40,18 +40,18 @@ static NSString * const kCellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[SRArticleTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
 
-    dispatch_queue_t fetchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    dispatch_async(fetchQueue, ^{
-        [self queryAPIForTopStories];
-    });
-    
-    
+    [self.tableView registerClass:[SRArticleTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     self.isFetchingData = YES;
     self.sharedManager = [SRNYTimesAPIManager sharedAPIManager];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    dispatch_queue_t fetchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_async(fetchQueue, ^{
+        [self queryAPIForTopStories];
+    });
     
     // TODO: Placeholder Not working
     self.urlForPlaceholderImage = [[NSBundle mainBundle] URLForResource:@"NYTLogo" withExtension:@"png"];
@@ -69,15 +69,20 @@ static NSString * const kCellIdentifier = @"cell";
 -(void) configureToastNotifications{
     
     self.sharedNotificationsManager = [SRToastNotificationView sharedManager];
+    [self.sharedNotificationsManager.toastBannerView setBackgroundColor:[UIColor redColor]];
+
+}
+
+-(void) showToastNotificationFromRight{
+    [self.navigationController.view addSubview:self.sharedNotificationsManager.toastBannerView];
     
-    UIView * toastView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100.0)];
-    [self.sharedNotificationsManager.toastBannerView addSubview:toastView];
-    
-    [toastView setBackgroundColor:[UIColor purpleColor]];
-    
-    
-    
-    
+    [self.sharedNotificationsManager addBounceFromTopAnimationAndRemoveOnCompletion:NO completion:^(BOOL finished) {
+        if (finished) {
+            [[SRToastNotificationView sharedManager] addDisappearTopAnimationWithBeginTime:1.5 andFillMode:kCAFillModeBoth andRemoveOnCompletion:YES completion:^(BOOL finished) {
+                
+            }];
+        }
+    }];
 }
 
 
@@ -98,6 +103,13 @@ static NSString * const kCellIdentifier = @"cell";
 -(void) addNavigationBarAndConfigure{
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    UIBarButtonItem *toastButtons = [[UIBarButtonItem alloc] initWithTitle:@"Toast!" style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(showToastNotificationFromRight)];
+    self.navigationItem.rightBarButtonItem = toastButtons;
+    
+    // -- NAV BAR APPEARANCE -- //
     [[UINavigationBar appearance] setBarTintColor:[SRNYTimesStyle gray246]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:24.0] }];
     self.navigationController.navigationBar.topItem.title = @"Top Stories";

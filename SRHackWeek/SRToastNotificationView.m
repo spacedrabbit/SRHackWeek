@@ -18,13 +18,13 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 #pragma mark - Life Cycle
 
 +(instancetype) sharedManager{
-    
-    __block SRToastNotificationView * sharedManager = nil;
+
+    __block SRToastNotificationView * _sharedManager = nil;
     static dispatch_once_t  onceToken;
     dispatch_once( &onceToken, ^{
-        sharedManager = [[SRToastNotificationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _sharedManager = [[SRToastNotificationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     });
-    return sharedManager;
+    return _sharedManager;
 }
 
 - (instancetype)init
@@ -35,6 +35,7 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
+    NSLog(@"withFrame");
 	if (self)
 	{
 		[self setupHierarchy];
@@ -90,21 +91,19 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 {
 	self.completionBlocksByAnimation = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaqueMemory valueOptions:NSPointerFunctionsStrongMemory];
 	NSMutableDictionary *viewsByName = [NSMutableDictionary dictionary];
-	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+	//NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 
 	UIView *__scaling__ = [UIView new];
-	__scaling__.bounds = CGRectMake(0, 0, 768, 400);
-	__scaling__.center = CGPointMake(384.0, 200.0);
+    __scaling__.bounds = [UIScreen mainScreen].bounds;//CGRectMake(0, 0, 768, 400);
+    __scaling__.center = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), (CGRectGetMidY([UIScreen mainScreen].bounds)));//CGPointMake(384.0, 200.0);
 	[self addSubview:__scaling__];
 	viewsByName[@"__scaling__"] = __scaling__;
 
 	UIImageView *toastPlaceholder = [UIImageView new];
-	toastPlaceholder.bounds = CGRectMake(0, 0, 320.0, 135.0);
-	//UIImage *imgPlaceholder001 = [UIImage imageWithContentsOfFile:[bundle pathForResource:@"placeholder.001.png" ofType:nil]];
-	//toastPlaceholder.image = imgPlaceholder001;
+	toastPlaceholder.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 135);
+
 	toastPlaceholder.contentMode = UIViewContentModeCenter;
-	toastPlaceholder.layer.position = CGPointMake(384.000, 67.850);
-	//toastPlaceholder.transform = CGAffineTransformMakeScale(2.40, 1.01);
+	toastPlaceholder.layer.position = CGPointMake( CGRectGetMidX([UIScreen mainScreen].bounds), -67.85); // was 67.85
 	[__scaling__ addSubview:toastPlaceholder];
 	viewsByName[kPlaceholderName] = toastPlaceholder;
 
@@ -147,19 +146,9 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 		[self.completionBlocksByAnimation setObject:completionBlock forKey:[self.layer animationForKey:@"BounceFromTop"]];
 	}
 
-	CAKeyframeAnimation *toastPlaceholderTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
-	toastPlaceholderTranslationXAnimation.duration = 0.400;
-	toastPlaceholderTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
-	toastPlaceholderTranslationXAnimation.keyTimes = @[@(0.000), @(0.750), @(1.000)];
-	toastPlaceholderTranslationXAnimation.timingFunctions = @[linearTiming, linearTiming];
-	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
-	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
-	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"bounceFromTop_TranslationX"];
-
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.400;
-	toastPlaceholderTranslationYAnimation.values = @[@(-140.000), @(0.000), @(-9.000), @(0.000)];
+	toastPlaceholderTranslationYAnimation.values = @[@(0.500), @(67.000), @(47.000), @(67.000)];
 	toastPlaceholderTranslationYAnimation.keyTimes = @[@(0.000), @(0.500), @(0.750), @(1.000)];
 	toastPlaceholderTranslationYAnimation.timingFunctions = @[overshootTiming, overshootTiming, linearTiming];
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
