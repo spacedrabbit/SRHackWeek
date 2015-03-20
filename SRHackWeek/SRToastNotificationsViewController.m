@@ -11,7 +11,9 @@
 #import "SRToastNotificationView.h"
 #import "SRToastNotificationsViewController.h"
 
+#import "SRArticleTableViewCell.h"
 
+static NSString * const kCellIdentifier = @"cell";
 @interface SRToastNotificationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) SRNYTimesAPIManager * sharedManager;
@@ -22,8 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerClass:[SRArticleTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     
     self.sharedManager = [SRNYTimesAPIManager sharedAPIManager];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     [self addNavigationBarAndConfigure];
     [self.sharedManager retrieveTopStories:12 completion:^(NSArray * topStories) {
@@ -45,15 +50,20 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    SRArticleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[SRArticleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier];
+    }
+    
+    return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 5;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 0;
+    return 1;
 }
 
 -(void) returnToMenu{
@@ -63,7 +73,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120.0;
+    return 160.0;
 }
 
 -(BOOL)prefersStatusBarHidden{ return YES; }

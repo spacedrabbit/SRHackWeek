@@ -10,6 +10,7 @@
 		2545C8FE1ABB660300CCBA87 /* SRToastNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */; };
 		2545C9021ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C9011ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m */; };
 		2545C9071ABB6E6300CCBA87 /* SRNYTimesArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C9061ABB6E6300CCBA87 /* SRNYTimesArticle.m */; };
+		2545C90A1ABBAD0900CCBA87 /* SRArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C9091ABBAD0900CCBA87 /* SRArticleTableViewCell.m */; };
 		2598520E1AB87DC500F79824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2598520D1AB87DC500F79824 /* main.m */; };
 		259852111AB87DC500F79824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 259852101AB87DC500F79824 /* AppDelegate.m */; };
 		259852171AB87DC500F79824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259852151AB87DC500F79824 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		2545C9011ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNYTimesAPIManager.m; sourceTree = "<group>"; };
 		2545C9051ABB6E6300CCBA87 /* SRNYTimesArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNYTimesArticle.h; sourceTree = "<group>"; };
 		2545C9061ABB6E6300CCBA87 /* SRNYTimesArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNYTimesArticle.m; sourceTree = "<group>"; };
+		2545C9081ABBAD0900CCBA87 /* SRArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRArticleTableViewCell.h; sourceTree = "<group>"; };
+		2545C9091ABBAD0900CCBA87 /* SRArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRArticleTableViewCell.m; sourceTree = "<group>"; };
 		259852081AB87DC500F79824 /* SRHackWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRHackWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2598520C1AB87DC500F79824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2598520D1AB87DC500F79824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 		25AAE2F91AB8C6DF00E8D3C1 /* UIStyles */ = {
 			isa = PBXGroup;
 			children = (
+				2545C9081ABBAD0900CCBA87 /* SRArticleTableViewCell.h */,
+				2545C9091ABBAD0900CCBA87 /* SRArticleTableViewCell.m */,
 				25AAE3021AB8CB9A00E8D3C1 /* UIAnimations */,
 				2545C8FF1ABB69FD00CCBA87 /* Style */,
 				25AAE2FD1AB8C73C00E8D3C1 /* images */,
@@ -400,6 +405,7 @@
 				2598520E1AB87DC500F79824 /* main.m in Sources */,
 				2545C9071ABB6E6300CCBA87 /* SRNYTimesArticle.m in Sources */,
 				25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */,
+				2545C90A1ABBAD0900CCBA87 /* SRArticleTableViewCell.m in Sources */,
 				25AAE30B1AB9E87400E8D3C1 /* SRToastNotificationsViewController.m in Sources */,
 				259852331AB8815900F79824 /* SRSplashScreenViewController.m in Sources */,
 			);
