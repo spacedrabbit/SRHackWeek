@@ -83,6 +83,9 @@ static NSString * const kCellIdentifier = @"cell";
     breakingNewsLabel.font = franklinMedium;
     breakingNewsLabel.text = @"HOLY CRAP: BREAKING NEWS";
     
+    UIGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTheToast)];
+    [self.sharedNotificationsManager.toastBannerView addGestureRecognizer:tapGesture];
+    
     [self.sharedNotificationsManager addBounceFromTopAnimationAndRemoveOnCompletion:NO completion:^(BOOL finished) {
         if (finished) {
             [[SRToastNotificationView sharedManager] addDisappearTopAnimationWithBeginTime:1.5 andFillMode:kCAFillModeBoth andRemoveOnCompletion:YES completion:^(BOOL finished) {
@@ -92,6 +95,15 @@ static NSString * const kCellIdentifier = @"cell";
     }];
 }
 
+-(void) removeTheToast{
+    
+    [[SRToastNotificationView sharedManager] addDisappearTopAnimationAndRemoveOnCompletion:YES];
+    //[self.sharedNotificationsManager removeAllAnimations];
+    //[self.sharedNotificationsManager setAlpha:0];
+    [self.sharedNotificationsManager addDisappearTopAnimationAndRemoveOnCompletion:YES completion:^(BOOL finished) {
+        
+    }];
+}
 
 -(void) queryAPIForTopStories{
     
