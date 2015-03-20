@@ -69,12 +69,19 @@ static NSString * const kCellIdentifier = @"cell";
 -(void) configureToastNotifications{
     
     self.sharedNotificationsManager = [SRToastNotificationView sharedManager];
-    [self.sharedNotificationsManager.toastBannerView setBackgroundColor:[UIColor redColor]];
+    [self.sharedNotificationsManager.toastBannerView setBackgroundColor:[SRNYTimesStyle redBreakingNews]];
 
 }
 
 -(void) showToastNotificationFromRight{
     [self.navigationController.view addSubview:self.sharedNotificationsManager.toastBannerView];
+    UILabel * breakingNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 30, self.sharedNotificationsManager.toastBannerView.frame.size.width, self.sharedNotificationsManager.toastBannerView.frame.size.height)];
+    [breakingNewsLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.sharedNotificationsManager.toastBannerView addSubview:breakingNewsLabel];
+    
+    UIFont * franklinMedium = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:40.0];
+    breakingNewsLabel.font = franklinMedium;
+    breakingNewsLabel.text = @"HOLY CRAP: BREAKING NEWS";
     
     [self.sharedNotificationsManager addBounceFromTopAnimationAndRemoveOnCompletion:NO completion:^(BOOL finished) {
         if (finished) {
