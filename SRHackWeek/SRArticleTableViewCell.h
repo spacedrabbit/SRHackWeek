@@ -10,7 +10,7 @@
 
 @interface SRArticleTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) UILabel * titleLabel;
+@property (strong, nonatomic) UILabel * articleTitle;
 @property (strong, nonatomic) UITextView * articleAbstractField;
 @property (strong, nonatomic) UIImageView * multimediaImageView;
 @property (strong, nonatomic) UIView * tagContainer;
