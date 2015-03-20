@@ -7,6 +7,7 @@
 //
 
 #import "SRNYTimesArticle.h"
+
 @import CoreGraphics;
 
 /***********************************************************************************************************
@@ -18,22 +19,7 @@
  ***********************************************************************************************************/
 
 #pragma mark - NYTIMES MULTIMEDIA -
-@interface SRNYTimesArticleMultimedia : NSObject
-
-+(NSArray *) extractMediaItemsFromArticle:(NSArray *)article;
--(instancetype) initMediaWithCaption:(NSString *)caption copyright:(NSString *)copyrightInfo
-                              format:(NSString *)format  size:(CGSize)dimensions andURL:(NSString *)mediaURL;
-
-@end
-
 @interface SRNYTimesArticleMultimedia ()
-
-@property (strong, nonatomic) NSString * caption;
-@property (strong, nonatomic) NSString * copyrightInfo;
-@property (strong, nonatomic) NSString * format;
-@property (strong, nonatomic) NSString * mediaURL;
-@property (nonatomic)         CGSize   imageDimensions;
-
 @end
 
 @implementation SRNYTimesArticleMultimedia
@@ -47,16 +33,17 @@
             NSString * copyright = mediaInfo[@"copyright"];
             NSString * format = mediaInfo[@"format"];
             NSString * url = mediaInfo[@"url"];
+            NSString * type = mediaInfo[@"type"];
             CGSize dimension = CGSizeMake([mediaInfo[@"width"] integerValue], [mediaInfo[@"height"] integerValue]);
             
-            [mediaArray addObject:[[SRNYTimesArticleMultimedia alloc] initMediaWithCaption:caption copyright:copyright format:format size:dimension andURL:url]];
+            [mediaArray addObject:[[SRNYTimesArticleMultimedia alloc] initMediaWithCaption:caption copyright:copyright format:format type:type size:dimension andURL:url]];
         }
     }
     return mediaArray;
 }
 
 -(instancetype) initMediaWithCaption:(NSString *)caption copyright:(NSString *)copyrightInfo
-                              format:(NSString *)format  size:(CGSize)dimensions andURL:(NSString *)mediaURL {
+                              format:(NSString *)format  type:(NSString *)type size:(CGSize)dimensions andURL:(NSString *)mediaURL {
     
     self = [super init];
     if (self) {
@@ -65,6 +52,7 @@
         _format = format;
         _mediaURL = mediaURL;
         _imageDimensions = dimensions;
+        _mediaType = type;
     }
     return self;
 }
@@ -147,14 +135,6 @@
 
 @interface SRNYTimesArticle ()
 
-@property (strong, nonatomic) NSString * articleTitle;
-@property (strong, nonatomic) NSString * articleAbstract;
-@property (strong, nonatomic) NSString * articleByLine;
-@property (strong, nonatomic) NSString * articleURLString;
-@property (strong, nonatomic) NSString * articlePublishDate;
-@property (strong, nonatomic) NSArray * multimedia;
-@property (strong, nonatomic) NSArray * tags;
-
 @property (strong, nonatomic) NSString * NYTCopyrightInfo;
 
 @end
@@ -214,6 +194,38 @@
         _NYTCopyrightInfo = copyright;
     }
     return self;
+}
+
+-(BOOL) hasPresentableMediaImage{
+    return [self.multimedia count] ? YES : NO;
+}
+
+-(void) displayMultimediaForArticleWithCompletion:(void(^)(SRNYTimesArticleMultimedia *))mediaBlock{
+    
+    if ([self.multimedia count] >=1 ) {
+        
+        [self.multimedia enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            SRNYTimesArticleMultimedia * currentMediaItem = (SRNYTimesArticleMultimedia *)obj;
+            if ([currentMediaItem.format isEqualToString:@"thumbLarge"]) {
+                mediaBlock(currentMediaItem);
+                *stop = YES;
+            }
+                /*
+            }else if (  [currentMediaItem.format isEqualToString:@"Normal"]){
+                mediaBlock(currentMediaItem);
+            }
+            else if ( [currentMediaItem.format isEqualToString:@"mediumThreeByTwo210"]){
+                mediaBlock(currentMediaItem);
+            }
+            else if ( [currentMediaItem.format isEqualToString:@"Standard Thumbnail"]){
+                mediaBlock(currentMediaItem);
+            }*/
+        }];
+    }else{
+        mediaBlock(nil);
+    }
+    
 }
 
 @end

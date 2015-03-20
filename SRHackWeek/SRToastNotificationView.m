@@ -7,6 +7,8 @@
 
 #import "SRToastNotificationView.h"
 
+static NSString * const kPlaceholderName = @"toastPlaceholder";
+
 @interface SRToastNotificationView ()
 @property (strong, nonatomic) NSMapTable *completionBlocksByAnimation;
 @end
@@ -14,6 +16,16 @@
 @implementation SRToastNotificationView
 
 #pragma mark - Life Cycle
+
++(instancetype) sharedManager{
+    
+    __block SRToastNotificationView * sharedManager = nil;
+    static dispatch_once_t  onceToken;
+    dispatch_once( &onceToken, ^{
+        sharedManager = [[SRToastNotificationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    });
+    return sharedManager;
+}
 
 - (instancetype)init
 {
@@ -26,6 +38,7 @@
 	if (self)
 	{
 		[self setupHierarchy];
+        _toastBannerView = self.viewsByName[kPlaceholderName];
 	}
 	return self;
 }
@@ -93,7 +106,7 @@
 	toastPlaceholder.layer.position = CGPointMake(384.000, 67.850);
 	//toastPlaceholder.transform = CGAffineTransformMakeScale(2.40, 1.01);
 	[__scaling__ addSubview:toastPlaceholder];
-	viewsByName[@"toastPlaceholder"] = toastPlaceholder;
+	viewsByName[kPlaceholderName] = toastPlaceholder;
 
 	self.viewsByName = viewsByName;
 }
@@ -142,7 +155,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"bounceFromTop_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"bounceFromTop_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.400;
@@ -152,14 +165,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"bounceFromTop_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"bounceFromTop_TranslationY"];
 }
 
 - (void)removeBounceFromTopAnimation
 {
 	[self.layer removeAnimationForKey:@"BounceFromTop"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"bounceFromTop_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"bounceFromTop_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"bounceFromTop_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"bounceFromTop_TranslationY"];
 }
 
 #pragma mark - disappearTop
@@ -207,7 +220,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearTop_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearTop_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.375;
@@ -217,14 +230,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearTop_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearTop_TranslationY"];
 }
 
 - (void)removeDisappearTopAnimation
 {
 	[self.layer removeAnimationForKey:@"DisappearTop"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearTop_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearTop_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearTop_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearTop_TranslationY"];
 }
 
 #pragma mark - swipeFromRight
@@ -271,7 +284,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"swipeFromRight_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"swipeFromRight_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.700;
@@ -281,14 +294,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"swipeFromRight_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"swipeFromRight_TranslationY"];
 }
 
 - (void)removeSwipeFromRightAnimation
 {
 	[self.layer removeAnimationForKey:@"SwipeFromRight"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"swipeFromRight_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"swipeFromRight_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"swipeFromRight_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"swipeFromRight_TranslationY"];
 }
 
 #pragma mark - disappearToRight
@@ -336,7 +349,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearToRight_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearToRight_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.500;
@@ -346,14 +359,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearToRight_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearToRight_TranslationY"];
 }
 
 - (void)removeDisappearToRightAnimation
 {
 	[self.layer removeAnimationForKey:@"DisappearToRight"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearToRight_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearToRight_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearToRight_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearToRight_TranslationY"];
 }
 
 #pragma mark - bounceFromBottom
@@ -401,7 +414,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"bounceFromBottom_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"bounceFromBottom_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.500;
@@ -411,14 +424,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"bounceFromBottom_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"bounceFromBottom_TranslationY"];
 }
 
 - (void)removeBounceFromBottomAnimation
 {
 	[self.layer removeAnimationForKey:@"BounceFromBottom"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"bounceFromBottom_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"bounceFromBottom_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"bounceFromBottom_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"bounceFromBottom_TranslationY"];
 }
 
 #pragma mark - disappearToBottom
@@ -466,7 +479,7 @@
 	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearToBottom_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearToBottom_TranslationX"];
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.375;
@@ -476,14 +489,14 @@
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
 	toastPlaceholderTranslationYAnimation.fillMode = fillMode;
 	toastPlaceholderTranslationYAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[@"toastPlaceholder"] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearToBottom_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationYAnimation forKey:@"disappearToBottom_TranslationY"];
 }
 
 - (void)removeDisappearToBottomAnimation
 {
 	[self.layer removeAnimationForKey:@"DisappearToBottom"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearToBottom_TranslationX"];
-	[[self.viewsByName[@"toastPlaceholder"] layer] removeAnimationForKey:@"disappearToBottom_TranslationY"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearToBottom_TranslationX"];
+	[[self.viewsByName[kPlaceholderName] layer] removeAnimationForKey:@"disappearToBottom_TranslationY"];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag

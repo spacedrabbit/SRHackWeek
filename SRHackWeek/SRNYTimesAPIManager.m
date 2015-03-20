@@ -39,7 +39,7 @@ static NSString * const kNYTRequestURL = @"http://api.nytimes.com/svc/topstories
     return self;
 }
 
--(void)retrieveTopStories:(NSInteger)quantity completion:(void (^)(NSArray *))complete {
+-(void)retrieveTopStoriesWithCompletion:(void (^)(NSArray *))complete {
     
     NSError * requestError;
     

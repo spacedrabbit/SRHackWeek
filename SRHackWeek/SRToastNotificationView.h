@@ -11,6 +11,9 @@ IB_DESIGNABLE
 @interface SRToastNotificationView : UIView
 
 @property (strong, nonatomic) NSDictionary *viewsByName;
+@property (weak, nonatomic) UIView * toastBannerView;
+
++(instancetype) sharedManager;
 
 // bounceFromTop
 - (void)addBounceFromTopAnimation;

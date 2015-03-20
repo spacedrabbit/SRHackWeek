@@ -16,4 +16,6 @@
 @property (strong, nonatomic) UIView * tagContainer;
 @property (strong, nonatomic) UILabel * bylineView;
 
+-(void) displayThumbnail:(NSString *)thumbnail;
+
 @end
