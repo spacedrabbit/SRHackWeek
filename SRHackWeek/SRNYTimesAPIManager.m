@@ -16,6 +16,7 @@ static NSString * const kNYTRequestURL = @"http://api.nytimes.com/svc/topstories
 @interface SRNYTimesAPIManager ()
 
 @property (strong, nonatomic) SRNYTimesAPIManager * defaultManager;
+@property (nonatomic) NSInteger countOfArticlesFound;
 
 @end
 
@@ -57,16 +58,20 @@ static NSString * const kNYTRequestURL = @"http://api.nytimes.com/svc/topstories
         NSLog(@"Request made");
         NSDictionary * responseObjectDictionary = (NSDictionary *)responseObject;
         if (!error) {
-            NSLog(@"The response: %@", responseObject);
-            //NSArray * articles = [SRNYTimesArticle createArticlesFromJSONResponse:responseObjectDictionary];
-            
-            //NSLog(@"Articles! %@", articles);
+            NSArray * articles = [SRNYTimesArticle createArticlesFromJSONResponse:responseObjectDictionary];
+            self.countOfArticlesFound = [(NSString *)responseObjectDictionary[@"num_result"] integerValue];
+            complete(articles);
         }
         else{
-            NSLog(@"Request made, but has error: %@", error);
+            NSLog(@"Request completed, but has error: %@", error);
+            complete(nil);
         }
     }];
     [storiesRequestTask resume];
+}
+
+-(NSInteger) articlesRetrieved{
+    return self.countOfArticlesFound;
 }
 
 @end

@@ -17,7 +17,8 @@
                              urlString:(NSString *)urlString
                            publishDate:(NSString *)date
                             multimedia:(NSArray *)multimedia
-                               andTags:(NSArray *)tags;
+                               andTags:(NSArray *)tags
+                             copyright:(NSString *)copyright;
 
 -(instancetype) initWithTitle:(NSString *)title
                      abstract:(NSString *)abstract
@@ -25,6 +26,7 @@
                     urlString:(NSString *)urlString
                   publishDate:(NSString *)date
                    multimedia:(NSArray *)multimedia
-                      andTags:(NSArray *)tags;
+                      andTags:(NSArray *)tags
+                    copyright:(NSString *)copyright;
 
 @end

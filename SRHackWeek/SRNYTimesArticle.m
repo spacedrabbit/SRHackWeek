@@ -40,12 +40,8 @@
 
 +(NSArray *)extractMediaItemsFromArticle:(NSArray *)article{
     
-    // might be passed a string
-    
     NSMutableArray * mediaArray = [[NSMutableArray alloc] init];
-    if (![article respondsToSelector:@selector(objectForKey:)]) {
-        return nil;
-    }else{
+    if ([article isKindOfClass:[NSArray class]]) {
         for (NSDictionary * mediaInfo in article) {
             NSString * caption = mediaInfo[@"caption"];
             NSString * copyright = mediaInfo[@"copyright"];
@@ -103,9 +99,24 @@
     
     NSMutableArray * locatedTags = [[NSMutableArray alloc] init];
     NSArray * articleKeys = [article allKeys];
+    
+    // grabs single article JSON, looks for *_facet and interrates over string/array to pull out all tags
     for (NSString * key in articleKeys) {
-        if ([key containsString:@"facet"]) {
-            SRNYTimesArticleTag * articleTag = [[SRNYTimesArticleTag alloc] initTagWithName:article[key] andKey:key];
+        
+        SRNYTimesArticleTag * articleTag = nil;
+        if ([key containsString:@"facet"] ) {
+            
+            if ( [article[key] isKindOfClass:[NSArray class]] ) { // multiple tags
+                
+                for (NSString * facetString in article[key]) {
+                    
+                    articleTag = [[SRNYTimesArticleTag alloc] initTagWithName:facetString andKey:key];
+                }
+            }
+            else if ( [article[key] isKindOfClass:[NSString class]] ){ // single tag
+                articleTag = [[SRNYTimesArticleTag alloc] initTagWithName:article[key] andKey:key];
+            }
+            
             [locatedTags addObject:articleTag];
         }
     }
@@ -150,16 +161,18 @@
 
 @implementation SRNYTimesArticle
 
-+(instancetype)createArticleWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags{
++(instancetype)createArticleWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags copyright:(NSString *)copyright{
     return [[SRNYTimesArticle alloc] initWithTitle:title abstract:abstract
                                             byLine:byLine urlString:urlString
-                                       publishDate:date multimedia:multimedia andTags:tags];
+                                       publishDate:date multimedia:multimedia andTags:tags copyright:copyright];
 }
 
 +(NSArray *)createArticlesFromJSONResponse:(NSDictionary *) topStoriesJSON{
     
+    NSString * copyrightInfo = topStoriesJSON[@"copyright"];
     NSDictionary * topStoriesDictionary = topStoriesJSON[@"results"];
     NSMutableArray * allArticlesFound = [[NSMutableArray alloc] init];
+    
     for (NSDictionary * newsStory in topStoriesDictionary) {
         
         NSString * title = newsStory[@"title"];
@@ -167,23 +180,27 @@
         NSString * url = newsStory[@"url"];
         NSString * date = newsStory[@"created_date"];
         NSString * abstract = newsStory[@"abstract"];
-        
-        NSArray * media = [SRNYTimesArticleMultimedia extractMediaItemsFromArticle:newsStory[@"multimedia"]];
         NSArray * tags  = [SRNYTimesArticleTag extractTagsFromArticle:newsStory];
         
+        NSArray * media = nil;
+        if ([newsStory[@"multimedia"] isKindOfClass:[NSArray class]]) {
+            media = [SRNYTimesArticleMultimedia extractMediaItemsFromArticle:newsStory[@"multimedia"]];
+        }
+
         SRNYTimesArticle * newArticle = [[self class] createArticleWithTitle:title
                                                                     abstract:abstract
                                                                       byLine:byLine
                                                                    urlString:url
                                                                  publishDate:date
                                                                   multimedia:media
-                                                                     andTags:tags];
+                                                                     andTags:tags
+                                                                   copyright:copyrightInfo];
         [allArticlesFound addObject:newArticle];
     }
     return allArticlesFound;
 }
 
--(instancetype) initWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags{
+-(instancetype) initWithTitle:(NSString *)title abstract:(NSString *)abstract byLine:(NSString *)byLine urlString:(NSString *)urlString publishDate:(NSString *)date multimedia:(NSArray *)multimedia andTags:(NSArray *)tags copyright:(NSString *)copyright{
     
     self = [super init];
     if (self) {
@@ -194,6 +211,7 @@
         _articlePublishDate = date;
         _multimedia = multimedia;
         _tags = tags;
+        _NYTCopyrightInfo = copyright;
     }
     return self;
 }

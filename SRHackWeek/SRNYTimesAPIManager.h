@@ -12,6 +12,7 @@
 
 +(instancetype) sharedAPIManager;
 
+-(NSInteger) articlesRetrieved;
 -(void) retrieveTopStories:(NSInteger)quantity completion:(void(^)(NSArray *))complete;
 
 @end
