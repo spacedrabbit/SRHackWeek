@@ -13,6 +13,8 @@ IB_DESIGNABLE
 @property (strong, nonatomic) NSDictionary *viewsByName;
 @property (weak, nonatomic) UIView * toastBannerView;
 
+- (void)setupHierarchyForFrame:(CGRect)frame;
+
 +(instancetype) sharedManager;
 
 // bounceFromTop

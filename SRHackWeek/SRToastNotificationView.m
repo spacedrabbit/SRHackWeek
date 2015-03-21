@@ -9,8 +9,15 @@
 
 static NSString * const kPlaceholderName = @"toastPlaceholder";
 
-@interface SRToastNotificationView ()
+const CGFloat kToastBannerHeight = 80.0;
+const CGFloat kToastAnchorPoint = 0.5;
+const CGFloat kFirstBounceRatio = .667;
+const CGFloat kSecondBounceRatio = .334;
+
+@interface SRToastNotificationView () <UIGestureRecognizerDelegate>
 @property (strong, nonatomic) NSMapTable *completionBlocksByAnimation;
+@property (nonatomic) CGFloat defaultBannerHeight;
+
 @end
 
 @implementation SRToastNotificationView
@@ -29,16 +36,18 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 
 - (instancetype)init
 {
-	return [self initWithFrame:CGRectMake(0,0,768,400)];
+	return [self initWithFrame:[UIScreen mainScreen].bounds];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
-    NSLog(@"withFrame");
 	if (self)
 	{
-		[self setupHierarchy];
+        _defaultBannerHeight = kToastBannerHeight;
+        
+        [self setupHierarchyForFrame:frame];
+        
         _toastBannerView = self.viewsByName[kPlaceholderName];
 	}
 	return self;
@@ -49,7 +58,7 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 	self = [super initWithCoder:coder];
 	if (self)
 	{
-		[self setupHierarchy];
+		[self setupHierarchyForFrame:[UIScreen mainScreen].bounds];
 	}
 	return self;
 }
@@ -87,23 +96,23 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 
 #pragma mark - Setup
 
-- (void)setupHierarchy
+- (void)setupHierarchyForFrame:(CGRect)frame
 {
 	self.completionBlocksByAnimation = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaqueMemory valueOptions:NSPointerFunctionsStrongMemory];
 	NSMutableDictionary *viewsByName = [NSMutableDictionary dictionary];
 	//NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 
 	UIView *__scaling__ = [UIView new];
-    __scaling__.bounds = [UIScreen mainScreen].bounds;//CGRectMake(0, 0, 768, 400);
-    __scaling__.center = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), (CGRectGetMidY([UIScreen mainScreen].bounds)));//CGPointMake(384.0, 200.0);
+    __scaling__.bounds = frame; //CGRectMake(0, 0, 768, 400);
+    __scaling__.center = CGPointMake(CGRectGetMidX(frame), (CGRectGetMidY(frame))); //CGPointMake(384.0, 200.0);
 	[self addSubview:__scaling__];
 	viewsByName[@"__scaling__"] = __scaling__;
 
 	UIImageView *toastPlaceholder = [UIImageView new];
-	toastPlaceholder.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 135);
+	toastPlaceholder.bounds = CGRectMake(0, 0, frame.size.width, kToastBannerHeight);
 
 	toastPlaceholder.contentMode = UIViewContentModeCenter;
-	toastPlaceholder.layer.position = CGPointMake( CGRectGetMidX([UIScreen mainScreen].bounds), -67.85); // was 67.85
+	toastPlaceholder.layer.position = CGPointMake( CGRectGetMidX([UIScreen mainScreen].bounds), -kToastBannerHeight * kToastAnchorPoint);
 	[__scaling__ addSubview:toastPlaceholder];
 	viewsByName[kPlaceholderName] = toastPlaceholder;
 
@@ -148,7 +157,7 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.400;
-	toastPlaceholderTranslationYAnimation.values = @[@(0.500), @(67.000), @(47.000), @(67.000)];
+	toastPlaceholderTranslationYAnimation.values = @[@(0.000), @(kToastBannerHeight), @(kToastBannerHeight * kFirstBounceRatio), @(kToastBannerHeight)];
 	toastPlaceholderTranslationYAnimation.keyTimes = @[@(0.000), @(0.500), @(0.750), @(1.000)];
 	toastPlaceholderTranslationYAnimation.timingFunctions = @[overshootTiming, overshootTiming, linearTiming];
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;
@@ -200,20 +209,10 @@ static NSString * const kPlaceholderName = @"toastPlaceholder";
 		[self.layer addAnimation:representativeAnimation forKey:@"DisappearTop"];
 		[self.completionBlocksByAnimation setObject:completionBlock forKey:[self.layer animationForKey:@"DisappearTop"]];
 	}
-
-	CAKeyframeAnimation *toastPlaceholderTranslationXAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
-	toastPlaceholderTranslationXAnimation.duration = 0.375;
-	toastPlaceholderTranslationXAnimation.values = @[@(0.000), @(0.000), @(0.000)];
-	toastPlaceholderTranslationXAnimation.keyTimes = @[@(0.000), @(0.667), @(1.000)];
-	toastPlaceholderTranslationXAnimation.timingFunctions = @[linearTiming, linearTiming];
-	toastPlaceholderTranslationXAnimation.beginTime = beginTime;
-	toastPlaceholderTranslationXAnimation.fillMode = fillMode;
-	toastPlaceholderTranslationXAnimation.removedOnCompletion = removedOnCompletion;
-	[[self.viewsByName[kPlaceholderName] layer] addAnimation:toastPlaceholderTranslationXAnimation forKey:@"disappearTop_TranslationX"];
-
+    
 	CAKeyframeAnimation *toastPlaceholderTranslationYAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
 	toastPlaceholderTranslationYAnimation.duration = 0.375;
-	toastPlaceholderTranslationYAnimation.values = @[@(0.000), @(20.000), @(-140.000)];
+	toastPlaceholderTranslationYAnimation.values = @[@(0.000), @(kToastBannerHeight * kSecondBounceRatio), @(-kToastBannerHeight)];
 	toastPlaceholderTranslationYAnimation.keyTimes = @[@(0.000), @(0.667), @(1.000)];
 	toastPlaceholderTranslationYAnimation.timingFunctions = @[easeInOutTiming, anticipateTiming];
 	toastPlaceholderTranslationYAnimation.beginTime = beginTime;

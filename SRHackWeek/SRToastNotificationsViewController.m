@@ -17,7 +17,7 @@
 #import <UIImageView+AFNetworking.h>
 
 static NSString * const kCellIdentifier = @"cell";
-@interface SRToastNotificationsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SRToastNotificationsViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) SRToastNotificationView * sharedNotificationsManager;
 @property (strong, nonatomic) SRNYTimesAPIManager * sharedManager;
@@ -73,33 +73,31 @@ static NSString * const kCellIdentifier = @"cell";
 
 }
 
--(void) showToastNotificationFromRight{
+-(void) showToastNotificationFromTop{
+    
     [self.navigationController.view addSubview:self.sharedNotificationsManager.toastBannerView];
-    UILabel * breakingNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 30, self.sharedNotificationsManager.toastBannerView.frame.size.width, self.sharedNotificationsManager.toastBannerView.frame.size.height)];
+    [self.sharedNotificationsManager.toastBannerView setUserInteractionEnabled:YES];
+    
+    UILabel * breakingNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.sharedNotificationsManager.toastBannerView.frame.size.width, self.sharedNotificationsManager.toastBannerView.frame.size.height)];
     [breakingNewsLabel setAdjustsFontSizeToFitWidth:YES];
+    [breakingNewsLabel setUserInteractionEnabled:YES];
     [self.sharedNotificationsManager.toastBannerView addSubview:breakingNewsLabel];
+    //breakingNewsLabel.exclusiveTouch = YES;
+    
+    UITapGestureRecognizer * tapOnBanner = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTheToast)];
+    [breakingNewsLabel addGestureRecognizer:tapOnBanner];
     
     UIFont * franklinMedium = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:40.0];
     breakingNewsLabel.font = franklinMedium;
     breakingNewsLabel.text = @"HOLY CRAP: BREAKING NEWS";
+
+    [self.sharedNotificationsManager addBounceFromTopAnimationAndRemoveOnCompletion:NO];
     
-    UIGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTheToast)];
-    [self.sharedNotificationsManager.toastBannerView addGestureRecognizer:tapGesture];
-    
-    [self.sharedNotificationsManager addBounceFromTopAnimationAndRemoveOnCompletion:NO completion:^(BOOL finished) {
-        if (finished) {
-            [[SRToastNotificationView sharedManager] addDisappearTopAnimationWithBeginTime:1.5 andFillMode:kCAFillModeBoth andRemoveOnCompletion:YES completion:^(BOOL finished) {
-                
-            }];
-        }
-    }];
 }
 
 -(void) removeTheToast{
-    
-    [[SRToastNotificationView sharedManager] addDisappearTopAnimationAndRemoveOnCompletion:YES];
-    //[self.sharedNotificationsManager removeAllAnimations];
-    //[self.sharedNotificationsManager setAlpha:0];
+    NSLog(@"Trying to remove");
+    [[SRToastNotificationView sharedManager] removeAllAnimations];
     [self.sharedNotificationsManager addDisappearTopAnimationAndRemoveOnCompletion:YES completion:^(BOOL finished) {
         
     }];
@@ -119,13 +117,21 @@ static NSString * const kCellIdentifier = @"cell";
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    NSLog(@"Sup");
+}
+
 -(void) addNavigationBarAndConfigure{
+    
+    // View dismissal
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleDone target:self action:@selector(returnToMenu)];
     self.navigationItem.leftBarButtonItem = backButton;
     
+    // Notification
     UIBarButtonItem *toastButtons = [[UIBarButtonItem alloc] initWithTitle:@"Toast!" style:UIBarButtonItemStylePlain
                                                                     target:self
-                                                                    action:@selector(showToastNotificationFromRight)];
+                                                                    action:@selector(showToastNotificationFromTop)];
     self.navigationItem.rightBarButtonItem = toastButtons;
     
     // -- NAV BAR APPEARANCE -- //
@@ -142,32 +148,24 @@ static NSString * const kCellIdentifier = @"cell";
     }else{
         
         if ([self.topStories count]) {
-            @try {
-                SRNYTimesArticle * currentArticleFromTopStories = (SRNYTimesArticle *)self.topStories[indexPath.row];
-                
-                cell.articleTitle.text = currentArticleFromTopStories.articleTitle;
-                cell.bylineView.text = currentArticleFromTopStories.articleByLine;
-                cell.articleAbstractField.text = currentArticleFromTopStories.articleAbstract;
-                
-                if ([currentArticleFromTopStories hasPresentableMediaImage]) {
-                    [currentArticleFromTopStories displayMultimediaForArticleWithCompletion:^(SRNYTimesArticleMultimedia * thumb) {
-                        
-                        if (thumb) {
-                            [cell displayThumbnail:thumb.mediaURL];
-                        }
-                        else{
-                            cell.multimediaImageView.image = [UIImage imageWithContentsOfFile:self.urlForPlaceholderImage.absoluteString];
-                        }
-                        
-                    }];
-                }
-                
-            }
-            @catch (NSException *exception) {
-                exception = [[NSException alloc] initWithName:@"Articles not yet retrieved" reason:@"Cell is being set up before data has been retrieved" userInfo:nil];
-            }
-            @finally{
-                
+
+            SRNYTimesArticle * currentArticleFromTopStories = (SRNYTimesArticle *)self.topStories[indexPath.row];
+            
+            cell.articleTitle.text = currentArticleFromTopStories.articleTitle;
+            cell.bylineView.text = currentArticleFromTopStories.articleByLine;
+            cell.articleAbstractField.text = currentArticleFromTopStories.articleAbstract;
+            
+            if ([currentArticleFromTopStories hasPresentableMediaImage]) {
+                [currentArticleFromTopStories displayMultimediaForArticleWithCompletion:^(SRNYTimesArticleMultimedia * thumb) {
+                    
+                    if (thumb) {
+                        [cell displayThumbnail:thumb.mediaURL];
+                    }
+                    else{
+                        cell.multimediaImageView.image = [UIImage imageWithContentsOfFile:self.urlForPlaceholderImage.absoluteString];
+                    }
+                    
+                }];
             }
 
         }

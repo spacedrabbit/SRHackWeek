@@ -21,7 +21,7 @@ static NSString * const kLogoImageViewName      = @"logoView";
 
 - (instancetype)init
 {
-	return [self initWithFrame:CGRectMake(0,0,375,667)];
+	return [self initWithFrame:[UIScreen mainScreen].bounds];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
