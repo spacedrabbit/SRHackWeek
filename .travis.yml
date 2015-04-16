@@ -1,3 +1,4 @@
 language: objective-c
 xcode_workspace: SRHackWeek.xcworkspace
 xcode_scheme: SRHackWeek-Travis
+xcode_sdk: iphonesimulator8.1
