@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SRSplashScreenViewController.h"
+#import "SRRandomUserGenerator.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,8 @@
     SRSplashScreenViewController * splashScreen = [[SRSplashScreenViewController alloc] init];
     [splashScreen.view setFrame:self.window.bounds];
     [splashScreen.view setBackgroundColor:[UIColor grayColor]];
+    
+    [SRRandomUserGenerator getSeveralRandomUsers:1];
     
     self.window.rootViewController = splashScreen;
     [self.window makeKeyAndVisible];

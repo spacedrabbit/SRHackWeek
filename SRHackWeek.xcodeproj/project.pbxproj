@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1449D8A91ADCBFDA00D58EA9 /* SRRandomUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1449D8A81ADCBFDA00D58EA9 /* SRRandomUserTableViewController.m */; };
+		1449D8AD1ADCC06500D58EA9 /* SRRandomUserGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1449D8AC1ADCC06500D58EA9 /* SRRandomUserGenerator.m */; };
 		2545C8FE1ABB660300CCBA87 /* SRToastNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */; };
 		2545C9021ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C9011ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m */; };
 		2545C9071ABB6E6300CCBA87 /* SRNYTimesArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545C9061ABB6E6300CCBA87 /* SRNYTimesArticle.m */; };
@@ -41,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		076B1923359B5AC88053D22E /* libPods-SRHackWeek.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SRHackWeek.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1449D8A71ADCBFDA00D58EA9 /* SRRandomUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRandomUserTableViewController.h; sourceTree = "<group>"; };
+		1449D8A81ADCBFDA00D58EA9 /* SRRandomUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRandomUserTableViewController.m; sourceTree = "<group>"; };
+		1449D8AB1ADCC06500D58EA9 /* SRRandomUserGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRandomUserGenerator.h; sourceTree = "<group>"; };
+		1449D8AC1ADCC06500D58EA9 /* SRRandomUserGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRandomUserGenerator.m; sourceTree = "<group>"; };
 		2545C8FC1ABB660300CCBA87 /* SRToastNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRToastNotificationView.h; sourceTree = "<group>"; };
 		2545C8FD1ABB660300CCBA87 /* SRToastNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRToastNotificationView.m; sourceTree = "<group>"; };
 		2545C9001ABB6A3B00CCBA87 /* SRNYTimesAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNYTimesAPIManager.h; sourceTree = "<group>"; };
@@ -104,6 +110,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1449D8AA1ADCBFDD00D58EA9 /* Rando User Pivot */ = {
+			isa = PBXGroup;
+			children = (
+				1449D8A71ADCBFDA00D58EA9 /* SRRandomUserTableViewController.h */,
+				1449D8A81ADCBFDA00D58EA9 /* SRRandomUserTableViewController.m */,
+			);
+			name = "Rando User Pivot";
+			sourceTree = "<group>";
+		};
+		1449D8AE1ADCC06C00D58EA9 /* Random User Pivot */ = {
+			isa = PBXGroup;
+			children = (
+				1449D8AB1ADCC06500D58EA9 /* SRRandomUserGenerator.h */,
+				1449D8AC1ADCC06500D58EA9 /* SRRandomUserGenerator.m */,
+			);
+			name = "Random User Pivot";
+			sourceTree = "<group>";
+		};
 		230F4775DDFB729142DFCAE6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +153,7 @@
 				2545C9011ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m */,
 				2545C9051ABB6E6300CCBA87 /* SRNYTimesArticle.h */,
 				2545C9061ABB6E6300CCBA87 /* SRNYTimesArticle.m */,
+				1449D8AE1ADCC06C00D58EA9 /* Random User Pivot */,
 			);
 			name = "API Calls";
 			sourceTree = "<group>";
@@ -140,6 +165,7 @@
 				259852321AB8815900F79824 /* SRSplashScreenViewController.m */,
 				25AAE3091AB9E87400E8D3C1 /* SRToastNotificationsViewController.h */,
 				25AAE30A1AB9E87400E8D3C1 /* SRToastNotificationsViewController.m */,
+				1449D8AA1ADCBFDD00D58EA9 /* Rando User Pivot */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -404,6 +430,8 @@
 				2545C9021ABB6A3B00CCBA87 /* SRNYTimesAPIManager.m in Sources */,
 				2598520E1AB87DC500F79824 /* main.m in Sources */,
 				2545C9071ABB6E6300CCBA87 /* SRNYTimesArticle.m in Sources */,
+				1449D8AD1ADCC06500D58EA9 /* SRRandomUserGenerator.m in Sources */,
+				1449D8A91ADCBFDA00D58EA9 /* SRRandomUserTableViewController.m in Sources */,
 				25AAE3051AB8CBCB00E8D3C1 /* SRSplashScreenAnimationView.m in Sources */,
 				2545C90A1ABBAD0900CCBA87 /* SRArticleTableViewCell.m in Sources */,
 				25AAE30B1AB9E87400E8D3C1 /* SRToastNotificationsViewController.m in Sources */,
