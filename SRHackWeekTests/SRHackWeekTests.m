@@ -37,4 +37,8 @@
     }];
 }
 
+- (void)testOneMoreTimeForTravis{
+    XCTAssert(YES,@"Travis, it's me Louis. Do you hear me?");
+}
+
 @end
