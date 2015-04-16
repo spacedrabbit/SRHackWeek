@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "152A5C3C064C70E6DA49A030"
-               BuildableName = "libPods-SRHackWeek.a"
-               BlueprintName = "Pods-SRHackWeek"
+               BlueprintIdentifier = "D3400C0524BB3967EF7C1E34"
+               BuildableName = "libPods-SRHackWeekTests.a"
+               BlueprintName = "Pods-SRHackWeekTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90EF1AE701F11960FD98F901"
-               BuildableName = "libPods-SRHackWeek-AFNetworking.a"
-               BlueprintName = "Pods-SRHackWeek-AFNetworking"
+               BlueprintIdentifier = "F8073F77856E28BAF708DBCF"
+               BuildableName = "libPods-SRHackWeek.a"
+               BlueprintName = "Pods-SRHackWeek"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -70,24 +70,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "259852201AB87DC500F79824"
-               BuildableName = "SRHackWeekTests.xctest"
-               BlueprintName = "SRHackWeekTests"
-               ReferencedContainer = "container:SRHackWeek.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "259852071AB87DC500F79824"
-            BuildableName = "SRHackWeek.app"
-            BlueprintName = "SRHackWeek"
-            ReferencedContainer = "container:SRHackWeek.xcodeproj">
+            BlueprintIdentifier = "D3400C0524BB3967EF7C1E34"
+            BuildableName = "libPods-SRHackWeekTests.a"
+            BlueprintName = "Pods-SRHackWeekTests"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -100,16 +90,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "259852071AB87DC500F79824"
-            BuildableName = "SRHackWeek.app"
-            BlueprintName = "SRHackWeek"
-            ReferencedContainer = "container:SRHackWeek.xcodeproj">
+            BlueprintIdentifier = "D3400C0524BB3967EF7C1E34"
+            BuildableName = "libPods-SRHackWeekTests.a"
+            BlueprintName = "Pods-SRHackWeekTests"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -119,16 +108,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "259852071AB87DC500F79824"
-            BuildableName = "SRHackWeek.app"
-            BlueprintName = "SRHackWeek"
-            ReferencedContainer = "container:SRHackWeek.xcodeproj">
+            BlueprintIdentifier = "D3400C0524BB3967EF7C1E34"
+            BuildableName = "libPods-SRHackWeekTests.a"
+            BlueprintName = "Pods-SRHackWeekTests"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

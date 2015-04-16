@@ -3,7 +3,7 @@
 
 target 'SRHackWeek' do
 
-pod "AFNetworking"
+pod 'AFNetworking'
 
 end
 
