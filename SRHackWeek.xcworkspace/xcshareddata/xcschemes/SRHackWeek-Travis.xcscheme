@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3400C0524BB3967EF7C1E34"
+               BlueprintIdentifier = "D017DE1455B4C3893112CD0D"
                BuildableName = "libPods-SRHackWeekTests.a"
                BlueprintName = "Pods-SRHackWeekTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8073F77856E28BAF708DBCF"
+               BlueprintIdentifier = "1693320811706116DFAC13AB"
                BuildableName = "libPods-SRHackWeek.a"
                BlueprintName = "Pods-SRHackWeek"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
