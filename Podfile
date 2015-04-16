@@ -9,5 +9,8 @@ end
 
 target 'SRHackWeekTests' do
 
+pod 'Specta'
+pod 'Expecta'
+
 end
 
