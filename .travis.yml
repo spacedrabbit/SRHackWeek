@@ -2,5 +2,7 @@ language: objective-c
 xcode_workspace: SRHackWeek.xcworkspace
 xcode_scheme: SRHackWeek-Travis
 xcode_sdk: iphonesimulator8.1
+before_install:
+  - sudo easy_install cpp-coveralls
 after_success:
   - ./scripts/coveralls.sh
