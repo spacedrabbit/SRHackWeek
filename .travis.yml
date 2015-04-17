@@ -3,4 +3,4 @@ xcode_workspace: SRHackWeek.xcworkspace
 xcode_scheme: SRHackWeek-Travis
 xcode_sdk: iphonesimulator8.1
 after_success:
-  - ./script/coveralls.sh
+  - ./scripts/coveralls.sh
