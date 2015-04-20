@@ -1,8 +1,8 @@
 language: objective-c
-xcode_workspace: SRHackWeek.xcworkspace
-xcode_scheme: SRHackWeek-Travis
 xcode_sdk: iphonesimulator8.1
-before-install:
+xcode_scheme: SRHackWeek-Travis
+xcode_workspace: SRHackWeek.xcworkspace
+before_install:
   - brew update
   - brew reinstall xctool
   - gem update cocoapods
