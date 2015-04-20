@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D017DE1455B4C3893112CD0D"
-               BuildableName = "libPods-SRHackWeekTests.a"
-               BlueprintName = "Pods-SRHackWeekTests"
+               BlueprintIdentifier = "FB9ABA2C24F75247D419E695"
+               BuildableName = "libPods-SRHackWeek-AFNetworking.a"
+               BlueprintName = "Pods-SRHackWeek-AFNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1693320811706116DFAC13AB"
-               BuildableName = "libPods-SRHackWeek.a"
-               BlueprintName = "Pods-SRHackWeek"
+               BlueprintIdentifier = "14D321899B8571F8C9A10634"
+               BuildableName = "libPods-SRHackWeekTests-Expecta.a"
+               BlueprintName = "Pods-SRHackWeekTests-Expecta"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8A045BE27FECB079F9294A2B"
+               BuildableName = "libPods-SRHackWeekTests-Specta.a"
+               BlueprintName = "Pods-SRHackWeekTests-Specta"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

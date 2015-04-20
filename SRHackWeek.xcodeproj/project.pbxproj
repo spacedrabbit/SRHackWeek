@@ -667,7 +667,7 @@
 				2598522A1AB87DC500F79824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2598522B1AB87DC500F79824 /* Build configuration list for PBXNativeTarget "SRHackWeek" */ = {
 			isa = XCConfigurationList;
@@ -676,7 +676,7 @@
 				2598522D1AB87DC500F79824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2598522E1AB87DC500F79824 /* Build configuration list for PBXNativeTarget "SRHackWeekTests" */ = {
 			isa = XCConfigurationList;
@@ -685,7 +685,7 @@
 				259852301AB87DC500F79824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
