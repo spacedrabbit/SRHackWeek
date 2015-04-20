@@ -2,3 +2,10 @@ language: objective-c
 xcode_workspace: SRHackWeek.xcworkspace
 xcode_scheme: SRHackWeek-Travis
 xcode_sdk: iphonesimulator8.1
+before-install:
+  - brew update
+  - brew reinstall xctool
+  - gem update cocoapods
+  - gem install slather
+after_success:
+  - slather
